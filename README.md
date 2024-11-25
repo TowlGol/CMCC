@@ -363,13 +363,14 @@ By observing the graphs, it can be concluded that SCB yields better results for 
 
 
 By comparing the visualization results, the shape of the calculated results did not change, the size did.    We believe the change in size is due to finer probes exploring small spaces between atoms—spaces that cavity guest molecules cannot physically reach.    moreover, by combining the charts, It is evident that these small spaces are not considered part of the supramolecular cage's cavity (fewer vertices result in higher accuracy).    Therefore, we conclude that results for DT = 3 or 4 are acceptable compared to DT = 5.    Considering the comparison with mean absolute error(Figure 3 dotted line) in Figure 2, we ultimately recommend using DT = 4 as the parameter when the volume of the supramolecular cage is less than 500.
-<div style="text-align: center;">
+<p align="center">
   <img src="./image/2.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
   <p><em>图3：分裂次数对最终效果的影响。</em></p>
-</div>
+</p>
 
-<div style="text-align: center;">
+<p align="center">
   <img src="./image/3.png" alt="计算时间与网格划分之间的关系" style="width:50%;">
-  <p><em>图4：B5、B6的空腔计算可视化结果。</em></p>
-</div>
+  <br><em>图4：B5、B6的空腔计算可视化结果。</em>
+</p>
+
 
