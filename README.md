@@ -193,89 +193,108 @@ Current mainstream biomolecular results are typically saved and presented in for
 <table style="width: 100%;">
   <thead>
     <tr>
-      <th style="text-align: center; width: 10%;">Cage</th>
-      <th style="text-align: center; width: 6.9%;">B1</th>
-      <th style="text-align: center; width: 6.9%;">B2</th>
-      <th style="text-align: center; width: 6.9%;">B3</th>
-      <th style="text-align: center; width: 6.9%;">B4</th>
-      <th style="text-align: center; width: 6.9%;">B5</th>
-      <th style="text-align: center; width: 6.9%;">B6</th>
-      <th style="text-align: center; width: 6.9%;">B7</th>
-      <th style="text-align: center; width: 6.9%;">B8</th>
-      <th style="text-align: center; width: 6.9%;">B9</th>
-      <th style="text-align: center; width: 6.9%;">B10</th>
-      <th style="text-align: center; width: 6.9%;">B11</th>
-      <th style="text-align: center; width: 6.9%;">B12</th>
-      <th style="text-align: center; width: 6.9%;">B13</th>
+      <th style="text-align: center; width: 20%;">Parameter</th>
+      <th style="text-align: center; width: 20%;">Value</th>
+      <th style="text-align: center; width: 20%;">SCB result</th>
+      <th style="text-align: center; width: 20%;">Division Time</th>
+      <th style="text-align: center; width: 20%;">Result</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="text-align: center;">
-      <td style="width: 10%;">Estimated cavity Volume (Å<sup>3</sup>)</td>
-      <td style="width: 6.9%;">273</td>
-      <td style="width: 6.9%;">281</td>
-      <td style="width: 6.9%;">248</td>
-      <td style="width: 6.9%;">562</td>
-      <td style="width: 6.9%;">90</td>
-      <td style="width: 6.9%;">96</td>
-      <td style="width: 6.9%;">944</td>
-      <td style="width: 6.9%;">930</td>
-      <td style="width: 6.9%;">257</td>
-      <td style="width: 6.9%;">274</td>
-      <td style="width: 6.9%;">558</td>
-      <td style="width: 6.9%;">954</td>
-      <td style="width: 6.9%;">1123</td>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B1</td>
+      <td style="width: 20%;">273</td>
+      <td style="width: 20%;">303</td>
+      <td style="width: 20%;">4</td>
+      <td style="width: 20%;"><img src="./image/B1.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center;">
-      <td style="width: 10%;">SCB result</td>
-      <td style="width: 6.9%;">303</td>
-      <td style="width: 6.9%;">314</td>
-      <td style="width: 6.9%;">296</td>
-      <td style="width: 6.9%;">455</td>
-      <td style="width: 6.9%;">78</td>
-      <td style="width: 6.9%;">74</td>
-      <td style="width: 6.9%;">890</td>
-      <td style="width: 6.9%;">861</td>
-      <td style="width: 6.9%;">226</td>
-      <td style="width: 6.9%;">288</td>
-      <td style="width: 6.9%;">517</td>
-      <td style="width: 6.9%;">720</td>
-      <td style="width: 6.9%;">846</td>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B2</td>
+      <td style="width: 20%;">281</td>
+      <td style="width: 20%;">314</td>
+      <td style="width: 20%;">4</td>
+      <td style="width: 20%;"><img src="./image/B2.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center;">
-      <td style="width: 10%;">Division Time</td>
-      <td style="width: 6.9%;">4</td>
-      <td style="width: 6.9%;">4</td>
-      <td style="width: 6.9%;">4</td>
-      <td style="width: 6.9%;">5</td>
-      <td style="width: 6.9%;">4</td>
-      <td style="width: 6.9%;">4</td>
-      <td style="width: 6.9%;">5</td>
-      <td style="width: 6.9%;">5</td>
-      <td style="width: 6.9%;">4</td>
-      <td style="width: 6.9%;">4</td>
-      <td style="width: 6.9%;">5</td>
-      <td style="width: 6.9%;">5</td>
-      <td style="width: 6.9%;">5</td>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B3</td>
+      <td style="width: 20%;">248</td>
+      <td style="width: 20%;">296</td>
+      <td style="width: 20%;">4</td>
+      <td style="width: 20%;"><img src="./image/B3.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center;">
-      <td style="width: 10%;">Result</td>
-      <td style="width: 6.9%;"><img src="./image/B1.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B2.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B3.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B4.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B5.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B6.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B7.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B8.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B9.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B10.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B11.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B12.png" width="100" height="100"/></td>
-      <td style="width: 6.9%;"><img src="./image/B13.png" width="100" height="100"/></td>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B4</td>
+      <td style="width: 20%;">562</td>
+      <td style="width: 20%;">455</td>
+      <td style="width: 20%;">5</td>
+      <td style="width: 20%;"><img src="./image/B4.png" width="100" height="100"/></td>
+    </tr>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B5</td>
+      <td style="width: 20%;">90</td>
+      <td style="width: 20%;">78</td>
+      <td style="width: 20%;">4</td>
+      <td style="width: 20%;"><img src="./image/B5.png" width="100" height="100"/></td>
+    </tr>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B6</td>
+      <td style="width: 20%;">96</td>
+      <td style="width: 20%;">74</td>
+      <td style="width: 20%;">4</td>
+      <td style="width: 20%;"><img src="./image/B6.png" width="100" height="100"/></td>
+    </tr>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B7</td>
+      <td style="width: 20%;">944</td>
+      <td style="width: 20%;">890</td>
+      <td style="width: 20%;">5</td>
+      <td style="width: 20%;"><img src="./image/B7.png" width="100" height="100"/></td>
+    </tr>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B8</td>
+      <td style="width: 20%;">930</td>
+      <td style="width: 20%;">861</td>
+      <td style="width: 20%;">5</td>
+      <td style="width: 20%;"><img src="./image/B8.png" width="100" height="100"/></td>
+    </tr>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B9</td>
+      <td style="width: 20%;">257</td>
+      <td style="width: 20%;">226</td>
+      <td style="width: 20%;">4</td>
+      <td style="width: 20%;"><img src="./image/B9.png" width="100" height="100"/></td>
+    </tr>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B10</td>
+      <td style="width: 20%;">274</td>
+      <td style="width: 20%;">288</td>
+      <td style="width: 20%;">4</td>
+      <td style="width: 20%;"><img src="./image/B10.png" width="100" height="100"/></td>
+    </tr>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B11</td>
+      <td style="width: 20%;">558</td>
+      <td style="width: 20%;">517</td>
+      <td style="width: 20%;">5</td>
+      <td style="width: 20%;"><img src="./image/B11.png" width="100" height="100"/></td>
+    </tr>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B12</td>
+      <td style="width: 20%;">954</td>
+      <td style="width: 20%;">720</td>
+      <td style="width: 20%;">5</td>
+      <td style="width: 20%;"><img src="./image/B12.png" width="100" height="100"/></td>
+    </tr>
+    <tr style="text-align: center; height: 150px;">
+      <td style="width: 20%;">B13</td>
+      <td style="width: 20%;">1123</td>
+      <td style="width: 20%;">846</td>
+      <td style="width: 20%;">5</td>
+      <td style="width: 20%;"><img src="./image/B13.png" width="100" height="100"/></td>
     </tr>
   </tbody>
 </table>
+
 
 ### Table S6 : Calculation Result of Dataset 2
 
