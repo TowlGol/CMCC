@@ -190,110 +190,25 @@ Current mainstream biomolecular results are typically saved and presented in for
 
 ### Table S5 : Calculation Result of Dataset 1  
 
-<table style="width: 100%;">
-  <thead>
-    <tr>
-      <th align="center" style=" ">Parameter</th>
-      <th align="center" style=" ">Value</th>
-      <th align="center" style=" ">SCB result</th>
-      <th align="center" style=" ">Division Time</th>
-      <th align="center" style=" ">Result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B1</td>
-      <td style="">273</td>
-      <td style="">303</td>
-      <td style="">4</td>
-      <td style=""><img src="./image/B1.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B2</td>
-      <td style="">281</td>
-      <td style="">314</td>
-      <td style="">4</td>
-      <td style=""><img src="./image/B2.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B3</td>
-      <td style="">248</td>
-      <td style="">296</td>
-      <td style="">4</td>
-      <td style=""><img src="./image/B3.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B4</td>
-      <td style="">562</td>
-      <td style="">455</td>
-      <td style="">5</td>
-      <td style=""><img src="./image/B4.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B5</td>
-      <td style="">90</td>
-      <td style="">78</td>
-      <td style="">4</td>
-      <td style=""><img src="./image/B5.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B6</td>
-      <td style="">96</td>
-      <td style="">74</td>
-      <td style="">4</td>
-      <td style=""><img src="./image/B6.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B7</td>
-      <td style="">944</td>
-      <td style="">890</td>
-      <td style="">5</td>
-      <td style=""><img src="./image/B7.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B8</td>
-      <td style="">930</td>
-      <td style="">861</td>
-      <td style="">5</td>
-      <td style=""><img src="./image/B8.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B9</td>
-      <td style="">257</td>
-      <td style="">226</td>
-      <td style="">4</td>
-      <td style=""><img src="./image/B9.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B10</td>
-      <td style="">274</td>
-      <td style="">288</td>
-      <td style="">4</td>
-      <td style=""><img src="./image/B10.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B11</td>
-      <td style="">558</td>
-      <td style="">517</td>
-      <td style="">5</td>
-      <td style=""><img src="./image/B11.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B12</td>
-      <td style="">954</td>
-      <td style="">720</td>
-      <td style="">5</td>
-      <td style=""><img src="./image/B12.png" width="100" height="100"/></td>
-    </tr>
-    <tr align="center" style=" height: 150px;">
-      <td style="">B13</td>
-      <td style="">1123</td>
-      <td style="">846</td>
-      <td style="">5</td>
-      <td style=""><img src="./image/B13.png" width="100" height="100"/></td>
-    </tr>
-  </tbody>
-</table>
+<div align="center">
+
+| **Parameter**                      | **Estimated Volume (Å³)** | **SCB Result** | **Division Time** | **Result**                           |
+|:----------------------------------:|:-------------------------:|:--------------:|:-----------------:|:-----------------------------------:|
+| **B1**                        | 273                       | 303            | 4                 | <img src="./image/B1.png" width="100" height="100"/>   |
+| **B2**                        | 281                       | 314            | 4                 | <img src="./image/B2.png" width="100" height="100"/>   |
+| **B3**                        | 248                       | 296            | 4                 | <img src="./image/B3.png" width="100" height="100"/>   |
+| **B4**                        | 562                       | 455            | 5                 | <img src="./image/B4.png" width="100" height="100"/>   |
+| **B5**                        | 90                        | 78             | 4                 | <img src="./image/B5.png" width="100" height="100"/>   |
+| **B6**                        | 96                        | 74             | 4                 | <img src="./image/B6.png" width="100" height="100"/>   |
+| **B7**                        | 944                       | 890            | 5                 | <img src="./image/B7.png" width="100" height="100"/>   |
+| **B8**                        | 930                       | 861            | 5                 | <img src="./image/B8.png" width="100" height="100"/>   |
+| **B9**                        | 257                       | 226            | 4                 | <img src="./image/B9.png" width="100" height="100"/>   |
+| **B10**                       | 274                       | 288            | 4                 | <img src="./image/B10.png" width="100" height="100"/>  |
+| **B11**                       | 558                       | 517            | 5                 | <img src="./image/B11.png" width="100" height="100"/>  |
+| **B12**                       | 954                       | 720            | 5                 | <img src="./image/B12.png" width="100" height="100"/>  |
+| **B13**                       | 1123                      | 846            | 5                 | <img src="./image/B13.png" width="100" height="100"/>  |
+
+</div>
 
 
 ### Table S6 : Calculation Result of Dataset 2
