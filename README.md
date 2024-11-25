@@ -354,22 +354,23 @@ The selection of parameters in the experiment is primarily based on two principl
 <!-- 
 实验中的参数选择主要基于两个原则：分裂次数的数据分析结果以及可视化结果对比。首先，我们分裂次数对于论文中数据集1计算结果的影响。SCB方法的第一步是对网格进行曲面划分。这一步骤与基于网格方法中的网格划分相似，划分次数会对最终结果的精确度与计算时间产生影响。图2展示了Division Time（DT）与SCB计算时间的关系。由于网格划分的网格数量是指数增长的，因此相对应的计算时间也随着划分次数进行增长。显而易见的是，在进行六次网格划分后，计算的时间已经达到了不可接受的时间量级（55 second）。因此，分裂参数应只介于3，4，5之间。 图2蓝色、绿色、黄色分别是分裂次数为3，4，5的计算结果。通过观察图标可以得出，DT)= 5时，SCB在较大的超分子笼（Cavity Volume  > 500）计算中有着较好的结果。而在其余的超分子笼空腔计算中，图3A中DT对结果的影响表现的并不明显。因此，我们在使用Rebek's rule的对比基础上引入了Origin Publication cavity volume作为对比参数（Figure 3B）。我们可以清晰的看到，DT = 3 在超分子笼较小时，计算精度较高。DT = 4在两个计算参考中的准确性更稳定且更高。为了进一步探究计算参数的选择，我们将数据中空腔体积较小的数据（B5,B6）进行了可视化。通过对比可视化结果可以发现，计算结果的形状没有发生变化，大小发生了变化。我们认为，大小发生变化的原因是更精细的探针探索到了原子之间的细小空间——空腔客体分子受物理限制所无法到达的空间。然而，结合图表我们可以知道，这些细小空间并不被认为是超分子笼的空腔（更少的顶点却有更高的准确率）。因此，我们认为相较于DT = 5 ,DT = 3或4的结果都可以接受。结合图2中对于MAME的对比，我们最终推荐在超分子笼体积小于500时使用DT=4作为参数。 -->
 
-<div style="text-align: center;">
+<p align="center">
   <img src="./image/1.png" alt="计算时间与网格划分之间的关系" style="width:50%;">
-  <p><em>图2：计算时间与网格划分之间的关系</em></p>
-</div>
+  <br><em>图2：计算时间与网格划分之间的关系。</em>
+</p>
+
 
 By observing the graphs, it can be concluded that SCB yields better results for larger supramolecular cages (Cavity Volume > 500) when DT = 5. However, for other supramolecular cage cavity calculations, the impact of DT on the results is not significant, as shown in Figure 3A. Hence, we introduced the Origin Publication cavity volume as a comparison parameter based on Rebek's rule (Figure 3B). DT = 3 has higher calculation accuracy for smaller supramolecular cages. DT = 4 shows more stable and higher accuracy across both calculation references. To further explore the choice of calculation parameters, we visualized the data with smaller cavity volumes (B5, B6).
 
 
 By comparing the visualization results, the shape of the calculated results did not change, the size did.    We believe the change in size is due to finer probes exploring small spaces between atoms—spaces that cavity guest molecules cannot physically reach.    moreover, by combining the charts, It is evident that these small spaces are not considered part of the supramolecular cage's cavity (fewer vertices result in higher accuracy).    Therefore, we conclude that results for DT = 3 or 4 are acceptable compared to DT = 5.    Considering the comparison with mean absolute error(Figure 3 dotted line) in Figure 2, we ultimately recommend using DT = 4 as the parameter when the volume of the supramolecular cage is less than 500.
 <p align="center">
-  <img src="./image/2.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
-  <p><em>图3：分裂次数对最终效果的影响。</em></p>
+  <img src="./image/2.png" alt="分裂次数对最终效果的影响。" style="width:100%;">
+  <br><em>图3：分裂次数对最终效果的影响。</em>
 </p>
 
 <p align="center">
-  <img src="./image/3.png" alt="计算时间与网格划分之间的关系" style="width:50%;">
+  <img src="./image/3.png" alt="B5、B6的空腔计算可视化结果。" style="width:50%;">
   <br><em>图4：B5、B6的空腔计算可视化结果。</em>
 </p>
 
