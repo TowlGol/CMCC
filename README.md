@@ -178,7 +178,7 @@ The following tables demonstrate the impact of the choice of sphere center on th
 <!-- 当前主流的生物分子结果通常都以pdb、mol2等形式进行保存与展示。然而，SCB的结果都以顶点网格的形式进行展现。并且展示效果通常只有空腔计算结果。我们认为这不利于专家使用SCB对超分子笼进行进一步分析。为此，我们实现了一种将顶点数据转化为pdb数据的方法来更好的展示我们的结果。每一个顶点被一个碳原子代替。相比于顶点，碳原子存在范德华半径(1.7Å)。因此我们需要向原子扩展方向的反向平移1.7Å的距离。图1展示了相应的转化过程。黑色的边框是顶点未转化前的表面外轮廓。红色和黄色边框分别是是转化后但未平移的内外表面轮廓。图1C展示是顶点平移后的结果。 -->
 Current mainstream biomolecular results are typically saved and presented in formats such as pdb and mol2. However, the results from SCB are displayed in the form of vertex meshes. This format is not conducive for experts to further analyze supramolecular cages using SCB. To address this, we have developed a method to convert vertex data into pdb data for better presentation of our results. In this method, each vertex is replaced by a carbon atom. Compared to the vertex, a carbon atom has a van der Waals radius (1.7 Å). Therefore, we need to perform a reverse translation of 1.7 Å in the direction of atomic expansion. Figure 1 illustrates the corresponding conversion process. The black outline represents the outer contour of the surface before vertex conversion. The red and yellow outlines represent the inner and outer surface contours after conversion. Figure 1C shows the result after the vertices have been translated.
 
-<div style="text-align: center;">
+<div align="center">
   <img src="./image/4.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
   <p><em>Figure 1 : SCB Result Convert Process.</em></p>
 </div>
@@ -193,104 +193,104 @@ Current mainstream biomolecular results are typically saved and presented in for
 <table style="width: 100%;">
   <thead>
     <tr>
-      <th style="text-align: center; width: 20%;">Parameter</th>
-      <th style="text-align: center; width: 20%;">Value</th>
-      <th style="text-align: center; width: 20%;">SCB result</th>
-      <th style="text-align: center; width: 20%;">Division Time</th>
-      <th style="text-align: center; width: 20%;">Result</th>
+      <th align="center" style=" ">Parameter</th>
+      <th align="center" style=" ">Value</th>
+      <th align="center" style=" ">SCB result</th>
+      <th align="center" style=" ">Division Time</th>
+      <th align="center" style=" ">Result</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B1</td>
-      <td style="width: 20%;">273</td>
-      <td style="width: 20%;">303</td>
-      <td style="width: 20%;">4</td>
-      <td style="width: 20%;"><img src="./image/B1.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B1</td>
+      <td style="">273</td>
+      <td style="">303</td>
+      <td style="">4</td>
+      <td style=""><img src="./image/B1.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B2</td>
-      <td style="width: 20%;">281</td>
-      <td style="width: 20%;">314</td>
-      <td style="width: 20%;">4</td>
-      <td style="width: 20%;"><img src="./image/B2.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B2</td>
+      <td style="">281</td>
+      <td style="">314</td>
+      <td style="">4</td>
+      <td style=""><img src="./image/B2.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B3</td>
-      <td style="width: 20%;">248</td>
-      <td style="width: 20%;">296</td>
-      <td style="width: 20%;">4</td>
-      <td style="width: 20%;"><img src="./image/B3.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B3</td>
+      <td style="">248</td>
+      <td style="">296</td>
+      <td style="">4</td>
+      <td style=""><img src="./image/B3.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B4</td>
-      <td style="width: 20%;">562</td>
-      <td style="width: 20%;">455</td>
-      <td style="width: 20%;">5</td>
-      <td style="width: 20%;"><img src="./image/B4.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B4</td>
+      <td style="">562</td>
+      <td style="">455</td>
+      <td style="">5</td>
+      <td style=""><img src="./image/B4.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B5</td>
-      <td style="width: 20%;">90</td>
-      <td style="width: 20%;">78</td>
-      <td style="width: 20%;">4</td>
-      <td style="width: 20%;"><img src="./image/B5.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B5</td>
+      <td style="">90</td>
+      <td style="">78</td>
+      <td style="">4</td>
+      <td style=""><img src="./image/B5.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B6</td>
-      <td style="width: 20%;">96</td>
-      <td style="width: 20%;">74</td>
-      <td style="width: 20%;">4</td>
-      <td style="width: 20%;"><img src="./image/B6.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B6</td>
+      <td style="">96</td>
+      <td style="">74</td>
+      <td style="">4</td>
+      <td style=""><img src="./image/B6.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B7</td>
-      <td style="width: 20%;">944</td>
-      <td style="width: 20%;">890</td>
-      <td style="width: 20%;">5</td>
-      <td style="width: 20%;"><img src="./image/B7.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B7</td>
+      <td style="">944</td>
+      <td style="">890</td>
+      <td style="">5</td>
+      <td style=""><img src="./image/B7.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B8</td>
-      <td style="width: 20%;">930</td>
-      <td style="width: 20%;">861</td>
-      <td style="width: 20%;">5</td>
-      <td style="width: 20%;"><img src="./image/B8.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B8</td>
+      <td style="">930</td>
+      <td style="">861</td>
+      <td style="">5</td>
+      <td style=""><img src="./image/B8.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B9</td>
-      <td style="width: 20%;">257</td>
-      <td style="width: 20%;">226</td>
-      <td style="width: 20%;">4</td>
-      <td style="width: 20%;"><img src="./image/B9.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B9</td>
+      <td style="">257</td>
+      <td style="">226</td>
+      <td style="">4</td>
+      <td style=""><img src="./image/B9.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B10</td>
-      <td style="width: 20%;">274</td>
-      <td style="width: 20%;">288</td>
-      <td style="width: 20%;">4</td>
-      <td style="width: 20%;"><img src="./image/B10.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B10</td>
+      <td style="">274</td>
+      <td style="">288</td>
+      <td style="">4</td>
+      <td style=""><img src="./image/B10.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B11</td>
-      <td style="width: 20%;">558</td>
-      <td style="width: 20%;">517</td>
-      <td style="width: 20%;">5</td>
-      <td style="width: 20%;"><img src="./image/B11.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B11</td>
+      <td style="">558</td>
+      <td style="">517</td>
+      <td style="">5</td>
+      <td style=""><img src="./image/B11.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B12</td>
-      <td style="width: 20%;">954</td>
-      <td style="width: 20%;">720</td>
-      <td style="width: 20%;">5</td>
-      <td style="width: 20%;"><img src="./image/B12.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B12</td>
+      <td style="">954</td>
+      <td style="">720</td>
+      <td style="">5</td>
+      <td style=""><img src="./image/B12.png" width="100" height="100"/></td>
     </tr>
-    <tr style="text-align: center; height: 150px;">
-      <td style="width: 20%;">B13</td>
-      <td style="width: 20%;">1123</td>
-      <td style="width: 20%;">846</td>
-      <td style="width: 20%;">5</td>
-      <td style="width: 20%;"><img src="./image/B13.png" width="100" height="100"/></td>
+    <tr align="center" style=" height: 150px;">
+      <td style="">B13</td>
+      <td style="">1123</td>
+      <td style="">846</td>
+      <td style="">5</td>
+      <td style=""><img src="./image/B13.png" width="100" height="100"/></td>
     </tr>
   </tbody>
 </table>
@@ -301,20 +301,20 @@ Current mainstream biomolecular results are typically saved and presented in for
 <table style="width: 100%;">
   <thead>
     <tr>
-      <th style="text-align: center; width: 10%;">Cage</th>
-      <th style="text-align: center; width: 10%;">A1</th>
-      <th style="text-align: center; width: 10%;">C1</th>
-      <th style="text-align: center; width: 10%;">F1</th>
-      <th style="text-align: center; width: 10%;">F2</th>
-      <th style="text-align: center; width: 10%;">H1</th>
-      <th style="text-align: center; width: 10%;">N1</th>
-      <th style="text-align: center; width: 10%;">O1</th>
-      <th style="text-align: center; width: 10%;">O2</th>
-      <th style="text-align: center; width: 10%;">W1</th>
+      <th align="center" style=" width: 10%;">Cage</th>
+      <th align="center" style=" width: 10%;">A1</th>
+      <th align="center" style=" width: 10%;">C1</th>
+      <th align="center" style=" width: 10%;">F1</th>
+      <th align="center" style=" width: 10%;">F2</th>
+      <th align="center" style=" width: 10%;">H1</th>
+      <th align="center" style=" width: 10%;">N1</th>
+      <th align="center" style=" width: 10%;">O1</th>
+      <th align="center" style=" width: 10%;">O2</th>
+      <th align="center" style=" width: 10%;">W1</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="text-align: center;">
+    <tr align="center">
       <td style="width: 10%;">Reference/Average Volume (Å<sup>3</sup>)</td>
       <td style="width: 10%;">1375</td>
       <td style="width: 10%;">549</td>
@@ -326,7 +326,7 @@ Current mainstream biomolecular results are typically saved and presented in for
       <td style="width: 10%;">400</td>
       <td style="width: 10%;">20</td>
     </tr>
-    <tr style="text-align: center;">
+    <tr align="center">
       <td style="width: 10%;">SCB result</td>
       <td style="width: 10%;">1455</td>
       <td style="width: 10%;">592</td>
@@ -338,7 +338,7 @@ Current mainstream biomolecular results are typically saved and presented in for
       <td style="width: 10%;">433</td>
       <td style="width: 10%;">27</td>
     </tr>
-    <tr style="text-align: center;">
+    <tr align="center">
       <td style="width: 10%;">Division Time</td>
       <td style="width: 10%;">5</td>
       <td style="width: 10%;">5</td>
@@ -350,7 +350,7 @@ Current mainstream biomolecular results are typically saved and presented in for
       <td style="width: 10%;">4</td>
       <td style="width: 10%;">4</td>
     </tr>
-    <tr style="text-align: center;">
+    <tr align="center">
       <td style="width: 10%;">Result</td>
       <td style="width: 10%;"><img src="./image/A1.png" width="100" height="100"/></td>
       <td style="width: 10%;"><img src="./image/C1.png" width="100" height="100"/></td>
