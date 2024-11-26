@@ -1,10 +1,12 @@
-<p align="center" style="font-size: 30px;">
+<p align="center" style="font-size: 90px;">
   <strong><em>EXPANDING BALLOONS</em></strong>
 </p>
 
 <div align="center">
   <img src="./image/main.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
-  <b>Workflow</b>
+  <p align="center" style="font-size: 30px;">
+  <strong><em>Workflow</em></strong>
+</p>
 </div>
 
 # Instructions
