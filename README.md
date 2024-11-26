@@ -74,7 +74,7 @@ Typically, you can find plugin installation path in "C:\Users\pc\AppData\Roaming
 <hr>
 
 
-# Supporting Information
+<!-- # Supporting Information
 
 The document serves as supporting material for "EXPANDING BALLOONS — A Robust Computational Method for Determining Supramolecular Cage Cavity Morphology Based on the 'Inflating Balloon' Metaphor." It provides further explanations of four parts of the paper: comparison of working parameters [(S1)](#s1-compare-working-parameter), center selection experiment [(S2)](#s2-center-selection-experiment-reult), SCB vertex result conversion [(S3)](#s3-SCB-Result-Convert), and experimental parameters and results of the baseline dataset [(S4)](#s4-experimental-results). If you want to know the detil about how to install and use SCB, you can visit GitHub for details and code.
 
@@ -291,4 +291,4 @@ By comparing the visualization results, the shape of the calculated results did 
 
 
 
-
+ -->
