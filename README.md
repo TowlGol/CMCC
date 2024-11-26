@@ -255,7 +255,7 @@ Current mainstream biomolecular results are typically saved and presented in for
 | **A1**   | 1375                               | 1455           | 5                 | <img src="./image/A1.png" width="100" height="100"/> |
 | **C1**   | 549                                | 592            | 5                 | <img src="./image/C1.png" width="100" height="100"/> |
 | **F1**   | 500                                | 480            | 5                 | <img src="./image/F1.png" width="100" height="100"/> |
-| **F2**   | 4257                               | 32350          | 5                 | <img src="./image/F2.png" width="100" height="100"/> |
+| **F2**   | 42572                               | 32350          | 5                 | <img src="./image/F2.png" width="100" height="100"/> |
 | **H1**   | 259                                | 167            | 4                 | <img src="./image/H1.png" width="100" height="100"/> |
 | **N1**   | 434                                | 407            | 4                 | <img src="./image/N1.png" width="100" height="100"/> |
 | **O1**   | 142                                | 95             | 4                 | <img src="./image/O1.png" width="100" height="100"/> |
