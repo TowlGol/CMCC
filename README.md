@@ -1,42 +1,83 @@
+<p align="center" style="font-size: 30px;">
+  <strong><em>EXPANDING BALLOONS</em></strong>
+</p>
+
+<div align="center">
+  <img src="./image/main.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
+  <b>Workflow</b>
+</div>
+
 # Instructions
-### Install Python environment
-### Install PyMOL
-### Use plugin to calculate cavity volume and output pml file
-#### Possible problems
-1. No module named 'scipy'
-2. No module named 'pymeshlab'
-3. No module named 'Bio'
-- Solution: Install missing Python library
-- pip install 'scipy' and rerun
-- pip install 'pymeshlab' and rerun
-- pip install 'Bio' and rerun
+
+EXPANDING BALLOONS is a Python-based tool for calculating the cavity morphology of a supramolecular cage. It can accurately support the calculation of many types of cavities. EXPANDING BALLOONS are available in two versions, the Python Project Version and the Pymol Plugin Version. In addition, a visual UI interface is provided in the Pymol Plugin to facilitate user use.
+
+## Quick installation:
+Installation of the tool is very simple and requires only a few steps:
+
+<b>
+
+1. Ensure the system has a python environment.
+2. install the modle in Python environment:
+  ```python
+  # If you have these environments installed, skip this step.
+  pip install scipy
+  pip install pymeshlab
+  pip install Bio
+  ```
+3. Put the supramolecular cage file in the "example" folder and modify the "filename" property in the Main_Process.py file.
+4. Run Main_Process.py.
+
+</b>
+
+All the results will be placed in the "example" folder. The PDB folder will store the PDB file of the cavity calculation result. The OBJ folder holds the cavity data information of the vertex type.
+
 
 ### Install plugin in PyMOL
-1. Find the local installation path of PyMOL2
-2. Example: C:\PyMOL2\Lib\site-packages\pmg_tk\startup
-3. Copy all plugin files to your startup path
 
-### Possible problems after installing plugin in PyMOL
-1. No module named 'scipy'
-2. No module named 'pymeshlab'
-3. No module named 'Bio'
-- Solution: Find the python environment path used by PyMOL, such as C:\PyMOL2\Scripts, and install the missing python library in this path
-- pip install 'scipy' and rerun
-- pip install 'pymeshlab' and rerun
-- pip install 'Bio' and rerun
 
-# Use Method
+There are only two step need to be finished:
+<b>
 
+1. Find the local plugin installation path of PyMOL. 
+2. Copy all plugin files to startup path.
+3. Start Pymol. 
+4. Enter the command "start_balloon_gui"
+
+</b>
+
+Typically, you can find plugin installation path in "C:\Users\pc\AppData\Roaming\pymol\startup". If "import Expanding_Balloon success" is displayed in the pymol window, the plug-in is successfully installed.
+#### Possible Problems
+<b>
+
+1. No module named 'scipy'.
+2. No module named 'pymeshlab'.
+3. No module named 'Bio'.
+4. Failed to install the model automatically.
+5. Folder not found.
+
+</b>
+
+#### Solution
+
+<b>
+
+- pip install 'scipy' and rerun.
+- pip install 'pymeshlab' and rerun.
+- pip install 'Bio' and rerun.
+- Find the python environment path used by PyMOL, such as C:\PyMOL\Scripts, and install the missing python library in this path.
+- Find the local installation path of PyMOL(Example: C:\PyMOL\Lib\site-packages\pmg_tk\startup). Copy all plugin files to your startup path.
+
+</b>
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+<b> This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. </b>
 
 # Supporting Information
 
-The document serves as supporting material for "EXPANDING BALLOONS — A Robust Computational Method for Determining Supramolecular Cage Cavity Morphology Based on the 'Inflating Balloon' Metaphor." It provides further explanations of four parts of the paper: comparison of working parameters (S1), center selection experiment (S2), SCB vertex result conversion (S3), and experimental parameters and results of the baseline dataset (S4). If you want to know the detil about how to install and use SCB, you can visit GitHub for details and code.
+The document serves as supporting material for "EXPANDING BALLOONS — A Robust Computational Method for Determining Supramolecular Cage Cavity Morphology Based on the 'Inflating Balloon' Metaphor." It provides further explanations of four parts of the paper: comparison of working parameters [(S1)](#s1-compare-working-parameter), center selection experiment [(S2)](#s2-center-selection-experiment-reult), SCB vertex result conversion [(S3)](#s3-SCB-Result-Convert), and experimental parameters and results of the baseline dataset [(S4)](#s4-experimental-results). If you want to know the detil about how to install and use SCB, you can visit GitHub for details and code.
 
-## S1： Compare Working Parameter
+## S1: Compare Working Parameter
 <div align="center">
 
 ### Table S1 : KVFinder project detecte properties. 
@@ -96,7 +137,7 @@ The document serves as supporting material for "EXPANDING BALLOONS — A Robust 
 
 
 
-### Table S3 : Cavity volumes calculated with C3 using a grid spacing of 0.5 Å and a distance threshold for the 90-degree calculation of 2 times the window size.For the Dataset 2, all run properties are default.
+### Table S3 : Cavity volumes calculated with C3 using a grid spacing of 0.5 Å and a distance threshold for the 90-degree calculation of 2 times the window size. For the Dataset 2, all run properties are default.
 | Supramolecular Cage Identifier | C3 Calculated Volume (Å³) | Guest vdW Volume (Å³) | Estimated Cavity Volume Using Rebek’s Rule (Å³) | Relative Error (%) |
 |:------------------------------:|:-------------------------:|:---------------------:|:--------------------------------------------:|:------------------:|
 |              B1                |            298            |          150          |                     273                      |        9.2         |
@@ -117,17 +158,15 @@ The document serves as supporting material for "EXPANDING BALLOONS — A Robust 
 </div>
 
 
-## S2：Center Selection Experiment Reult
+## S2:Center Selection Experiment Reult
 
-The following tables demonstrate the impact of the choice of sphere center on the results.The first row for each data presents the estimated cavity volume results, the cavity volume results calculated based on different sphere center, and division time parameter.The second row is the number of extension time(ET) for each result calculation.The third row is the relative error(RE) for each result calculation. As described in the paper, because many of the molecular cage data are affected by other forces such as hydrogen bonding, the actual cavity volume is smaller than the Rebek's rule based estimate. Therefore, we introduced the publication volume of the supramolecular cage to revise our results during the evaluation. The final result is the average of the two calculated results.
+The following tables demonstrate the impact of the choice of sphere center on the results. The first row for each data presents the estimated cavity volume results, the cavity volume results calculated based on different sphere center, and division time parameter. The second row is the number of extension time(ET) for each result calculation. The third row is the relative error(RE) for each result calculation. As described in the paper, because many of the molecular cage data are affected by other forces such as hydrogen bonding, the actual cavity volume is smaller than the Rebek's rule based estimate. Therefore, we introduced the publication volume of the supramolecular cage to revise our results during the evaluation. The final result is the average of the two calculated results.
 
-<!-- 下列图表展示了球心选择对于结果的影响。对于每个数据的第一行是估算结果或出版物结果不同点计算的空腔体积结果与分裂参数选择。第二行中的数据是每个结果计算所需要的分裂次数。第三行是计算结果与估算结果或出版物结果的误差值。正如论文中所描述的，由于许多分子笼数据受到氢键等其他作用力影响，实际空腔体积要小于基于Rebek's rule所估计的空腔体积。因此，在评估时我们引入超分子笼的出版物体积来修正我们的结果。最终的结果取两者的平均值。 -->
-  
 <div align="center">
 
 ### Table S4 : Sphere Center Influence
 
-| Supramolecular Cage Identifier | Estimated\Reference Cavity Volume (Å³) | Center | Centroid | Symmetrical Point | Division Time |
+| Supramolecular Cage | Estimated\Reference Cavity Volume (Å³) | Center(Å³) | Centroid(Å³) | Symmetrical Point(Å³) | Division Time |
 |:------------------------------:|:-------------------:|:------:|:--------:|:-----------------:|:-----:|
 |              B1                |         273         | 312    | 303      |  314              |   4   |
 |                                |         ET =         |  31  | 31   |   31   |       |
@@ -174,8 +213,6 @@ The following tables demonstrate the impact of the choice of sphere center on th
 </div>
 
 ## S3: SCB Result Convert
-
-<!-- 当前主流的生物分子结果通常都以pdb、mol2等形式进行保存与展示。然而，SCB的结果都以顶点网格的形式进行展现。并且展示效果通常只有空腔计算结果。我们认为这不利于专家使用SCB对超分子笼进行进一步分析。为此，我们实现了一种将顶点数据转化为pdb数据的方法来更好的展示我们的结果。每一个顶点被一个碳原子代替。相比于顶点，碳原子存在范德华半径(1.7Å)。因此我们需要向原子扩展方向的反向平移1.7Å的距离。图1展示了相应的转化过程。黑色的边框是顶点未转化前的表面外轮廓。红色和黄色边框分别是是转化后但未平移的内外表面轮廓。图1C展示是顶点平移后的结果。 -->
 Current mainstream biomolecular results are typically saved and presented in formats such as pdb and mol2. However, the results from SCB are displayed in the form of vertex meshes. This format is not conducive for experts to further analyze supramolecular cages using SCB. To address this, we have developed a method to convert vertex data into pdb data for better presentation of our results. In this method, each vertex is replaced by a carbon atom. Compared to the vertex, a carbon atom has a van der Waals radius (1.7 Å). Therefore, we need to perform a reverse translation of 1.7 Å in the direction of atomic expansion. Figure 1 illustrates the corresponding conversion process. The black outline represents the outer contour of the surface before vertex conversion. The red and yellow outlines represent the inner and outer surface contours after conversion. Figure 1C shows the result after the vertices have been translated.
 
 <div align="center">
@@ -192,7 +229,7 @@ Current mainstream biomolecular results are typically saved and presented in for
 
 <div align="center">
 
-| **Parameter**                      | **Estimated Volume (Å³)** | **SCB Result** | **Division Time** | **Result**                           |
+| **Cage**                      | **Estimated Volume (Å³)** | **SCB Result (Å³)** | **Division Time** | **Result**                           |
 |:----------------------------------:|:-------------------------:|:--------------:|:-----------------:|:-----------------------------------:|
 | **B1**                        | 273                       | 303            | 4                 | <img src="./image/B1.png" width="100" height="100"/>   |
 | **B2**                        | 281                       | 314            | 4                 | <img src="./image/B2.png" width="100" height="100"/>   |
@@ -213,84 +250,27 @@ Current mainstream biomolecular results are typically saved and presented in for
 
 ### Table S6 : Calculation Result of Dataset 2
 
-<table style="width: 100%;">
-  <thead>
-    <tr>
-      <th align="center" style=" width: 10%;">Cage</th>
-      <th align="center" style=" width: 10%;">A1</th>
-      <th align="center" style=" width: 10%;">C1</th>
-      <th align="center" style=" width: 10%;">F1</th>
-      <th align="center" style=" width: 10%;">F2</th>
-      <th align="center" style=" width: 10%;">H1</th>
-      <th align="center" style=" width: 10%;">N1</th>
-      <th align="center" style=" width: 10%;">O1</th>
-      <th align="center" style=" width: 10%;">O2</th>
-      <th align="center" style=" width: 10%;">W1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr align="center">
-      <td style="width: 10%;">Reference/Average Volume (Å<sup>3</sup>)</td>
-      <td style="width: 10%;">1375</td>
-      <td style="width: 10%;">549</td>
-      <td style="width: 10%;">500</td>
-      <td style="width: 10%;">4257</td>
-      <td style="width: 10%;">259</td>
-      <td style="width: 10%;">434</td>
-      <td style="width: 10%;">142</td>
-      <td style="width: 10%;">400</td>
-      <td style="width: 10%;">20</td>
-    </tr>
-    <tr align="center">
-      <td style="width: 10%;">SCB result</td>
-      <td style="width: 10%;">1455</td>
-      <td style="width: 10%;">592</td>
-      <td style="width: 10%;">480</td>
-      <td style="width: 10%;">32350</td>
-      <td style="width: 10%;">167</td>
-      <td style="width: 10%;">407</td>
-      <td style="width: 10%;">95</td>
-      <td style="width: 10%;">433</td>
-      <td style="width: 10%;">27</td>
-    </tr>
-    <tr align="center">
-      <td style="width: 10%;">Division Time</td>
-      <td style="width: 10%;">5</td>
-      <td style="width: 10%;">5</td>
-      <td style="width: 10%;">5</td>
-      <td style="width: 10%;">5</td>
-      <td style="width: 10%;">4</td>
-      <td style="width: 10%;">4</td>
-      <td style="width: 10%;">4</td>
-      <td style="width: 10%;">4</td>
-      <td style="width: 10%;">4</td>
-    </tr>
-    <tr align="center">
-      <td style="width: 10%;">Result</td>
-      <td style="width: 10%;"><img src="./image/A1.png" width="100" height="100"/></td>
-      <td style="width: 10%;"><img src="./image/C1.png" width="100" height="100"/></td>
-      <td style="width: 10%;"><img src="./image/F1.png" width="100" height="100"/></td>
-      <td style="width: 10%;"><img src="./image/F2.png" width="100" height="100"/></td>
-      <td style="width: 10%;"><img src="./image/H1.png" width="100" height="100"/></td>
-      <td style="width: 10%;"><img src="./image/N1.png" width="100" height="100"/></td>
-      <td style="width: 10%;"><img src="./image/O1.png" width="100" height="100"/></td>
-      <td style="width: 10%;"><img src="./image/W1.png" width="100" height="100"/></td>
-      <td style="width: 10%;"><img src="./image/O2.png" width="100" height="100"/></td>
-    </tr>
-  </tbody>
-</table>
+| **Cage** | **Reference/Average Volume (Å³)** | **SCB Result (Å³)** | **Division Time** | **Result** |
+|:--------:|:----------------------------------:|:--------------:|:-----------------:|:----------:|
+| **A1**   | 1375                               | 1455           | 5                 | ![A1](./image/A1.png){: width="100" height="100"} |
+| **C1**   | 549                                | 592            | 5                 | ![C1](./image/C1.png){: width="100" height="100"} |
+| **F1**   | 500                                | 480            | 5                 | ![F1](./image/F1.png){: width="100" height="100"} |
+| **F2**   | 4257                               | 32350          | 5                 | ![F2](./image/F2.png){: width="100" height="100"} |
+| **H1**   | 259                                | 167            | 4                 | ![H1](./image/H1.png){: width="100" height="100"} |
+| **N1**   | 434                                | 407            | 4                 | ![N1](./image/N1.png){: width="100" height="100"} |
+| **O1**   | 142                                | 95             | 4                 | ![O1](./image/O1.png){: width="100" height="100"} |
+| **O2**   | 400                                | 433            | 4                 | ![O2](./image/O2.png){: width="100" height="100"} |
+| **W1**   | 20                                 | 27             | 4                 | ![W1](./image/W1.png){: width="100" height="100"} |
 
 </div>
+
 
 The selection of parameters in the experiment is primarily based on two principles: data analysis results of division times and comparison of visualization results.   First, we examine the impact of division times on the calculation results for dataset 1 from the paper.   The SCB method's first step is the grid's surface division.   This step is similar to grid partitioning in grid-based methods, where the number of divisions affects the precision and computation time of the final results.   Figure 2 shows the relationship between Division Time (DT) and SCB computation time.  Due to the subdivision surface algorithm causing an exponential increase in the number of vertices, the corresponding computation time also increases with the times of subdivision surface.  It is evident that after six grid divisions, the computation time reaches an unacceptable magnitude (55 seconds).   Therefore, the division parameters should only be between 3, 4, and 5.   In Figure 2, the blue, green, and yellow lines represent the calculation results for subdivision times of 3, 4, and 5, respectively.
 
 
-<!-- 
-实验中的参数选择主要基于两个原则：分裂次数的数据分析结果以及可视化结果对比。首先，我们分裂次数对于论文中数据集1计算结果的影响。SCB方法的第一步是对网格进行曲面划分。这一步骤与基于网格方法中的网格划分相似，划分次数会对最终结果的精确度与计算时间产生影响。图2展示了Division Time（DT）与SCB计算时间的关系。由于网格划分的网格数量是指数增长的，因此相对应的计算时间也随着划分次数进行增长。显而易见的是，在进行六次网格划分后，计算的时间已经达到了不可接受的时间量级（55 second）。因此，分裂参数应只介于3，4，5之间。 图2蓝色、绿色、黄色分别是分裂次数为3，4，5的计算结果。通过观察图标可以得出，DT)= 5时，SCB在较大的超分子笼（Cavity Volume  > 500）计算中有着较好的结果。而在其余的超分子笼空腔计算中，图3A中DT对结果的影响表现的并不明显。因此，我们在使用Rebek's rule的对比基础上引入了Origin Publication cavity volume作为对比参数（Figure 3B）。我们可以清晰的看到，DT = 3 在超分子笼较小时，计算精度较高。DT = 4在两个计算参考中的准确性更稳定且更高。为了进一步探究计算参数的选择，我们将数据中空腔体积较小的数据（B5,B6）进行了可视化。通过对比可视化结果可以发现，计算结果的形状没有发生变化，大小发生了变化。我们认为，大小发生变化的原因是更精细的探针探索到了原子之间的细小空间——空腔客体分子受物理限制所无法到达的空间。然而，结合图表我们可以知道，这些细小空间并不被认为是超分子笼的空腔（更少的顶点却有更高的准确率）。因此，我们认为相较于DT = 5 ,DT = 3或4的结果都可以接受。结合图2中对于MAME的对比，我们最终推荐在超分子笼体积小于500时使用DT=4作为参数。 -->
-
 <p align="center">
   <img src="./image/1.png" alt="计算时间与网格划分之间的关系" style="width:50%;">
-  <br><em>图2：计算时间与网格划分之间的关系。</em>
+  <br><em>图2:计算时间与网格划分之间的关系。</em>
 </p>
 
 
@@ -300,12 +280,14 @@ By observing the graphs, it can be concluded that SCB yields better results for 
 By comparing the visualization results, the shape of the calculated results did not change, the size did.    We believe the change in size is due to finer probes exploring small spaces between atoms—spaces that cavity guest molecules cannot physically reach.    moreover, by combining the charts, It is evident that these small spaces are not considered part of the supramolecular cage's cavity (fewer vertices result in higher accuracy).    Therefore, we conclude that results for DT = 3 or 4 are acceptable compared to DT = 5.    Considering the comparison with mean absolute error(Figure 3 dotted line) in Figure 2, we ultimately recommend using DT = 4 as the parameter when the volume of the supramolecular cage is less than 500.
 <p align="center">
   <img src="./image/2.png" alt="分裂次数对最终效果的影响。" style="width:100%;">
-  <br><em>图3：分裂次数对最终效果的影响。</em>
+  <br><em>图3:分裂次数对最终效果的影响。</em>
 </p>
 
 <p align="center">
   <img src="./image/3.png" alt="B5、B6的空腔计算可视化结果。" style="width:50%;">
-  <br><em>图4：B5、B6的空腔计算可视化结果。</em>
+  <br><em>图4:B5、B6的空腔计算可视化结果。</em>
 </p>
+
+
 
 

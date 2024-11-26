@@ -48,7 +48,7 @@ class MyApp:
         divide_times = self.divide_times_input.get()
         ball_center_type = self.ball_center_type_input.get()
         
-        file_path_output = os.path.dirname(os.path.abspath(__file__)) + "/Extension_Balloon/examples"
+        file_path_output = os.path.dirname(os.path.abspath(__file__)) + "/Expanding_Balloon/examples"
         
         command = f"balloon.Calculate_Cavity('{file_name}', '{ball_center_type}', '{divide_times}', r'{file_path}/', r'{file_path_output}/')"
         cmd.do(command)
@@ -67,15 +67,15 @@ def __init_plugin__(self=None):
 
     for path in sys.path:
         if os.path.exists(os.path.join(path, 'startup')):
-            print(f"插件目录: {os.path.join(path, 'startup')}")
+            print(f"Dir: {os.path.join(path, 'startup')}")
 
     try:
-        from Extension_Balloon.Cavity_Calculation import cavity
-        print("成功导入 cavity 模块")
+        from Expanding_Balloon.Cavity_Calculation import cavity
+        print("import Expanding_Balloon success")
     except ImportError as e:
-        print(f"导入 cavity 模块失败: {e}")
+        print(f"import Expanding_Balloon failed: {e}")
 
-    cmd.do("from Extension_Balloon.Cavity_Calculation import cavity")
+    cmd.do("from Expanding_Balloon.Cavity_Calculation import cavity")
     cmd.do("balloon = cavity()")
     cmd.extend("start_balloon_gui", run_gui)
 
