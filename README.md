@@ -252,15 +252,15 @@ Current mainstream biomolecular results are typically saved and presented in for
 
 | **Cage** | **Reference/Average Volume (Å³)** | **SCB Result (Å³)** | **Division Time** | **Result** |
 |:--------:|:----------------------------------:|:--------------:|:-----------------:|:----------:|
-| **A1**   | 1375                               | 1455           | 5                 | ![A1](./image/A1.png){: width="100" height="100"} |
-| **C1**   | 549                                | 592            | 5                 | ![C1](./image/C1.png){: width="100" height="100"} |
-| **F1**   | 500                                | 480            | 5                 | ![F1](./image/F1.png){: width="100" height="100"} |
-| **F2**   | 4257                               | 32350          | 5                 | ![F2](./image/F2.png){: width="100" height="100"} |
-| **H1**   | 259                                | 167            | 4                 | ![H1](./image/H1.png){: width="100" height="100"} |
-| **N1**   | 434                                | 407            | 4                 | ![N1](./image/N1.png){: width="100" height="100"} |
-| **O1**   | 142                                | 95             | 4                 | ![O1](./image/O1.png){: width="100" height="100"} |
-| **O2**   | 400                                | 433            | 4                 | ![O2](./image/O2.png){: width="100" height="100"} |
-| **W1**   | 20                                 | 27             | 4                 | ![W1](./image/W1.png){: width="100" height="100"} |
+| **A1**   | 1375                               | 1455           | 5                 | <img src="./image/A1.png" width="100" height="100"/> |
+| **C1**   | 549                                | 592            | 5                 | <img src="./image/C1.png" width="100" height="100"/> |
+| **F1**   | 500                                | 480            | 5                 | <img src="./image/F1.png" width="100" height="100"/> |
+| **F2**   | 4257                               | 32350          | 5                 | <img src="./image/F2.png" width="100" height="100"/> |
+| **H1**   | 259                                | 167            | 4                 | <img src="./image/H1.png" width="100" height="100"/> |
+| **N1**   | 434                                | 407            | 4                 | <img src="./image/N1.png" width="100" height="100"/> |
+| **O1**   | 142                                | 95             | 4                 | <img src="./image/O1.png" width="100" height="100"/> |
+| **O2**   | 400                                | 433            | 4                 | <img src="./image/O2.png" width="100" height="100"/> |
+| **W1**   | 20                                 | 27             | 4                 | <img src="./image/W1.png" width="100" height="100"/> |
 
 </div>
 
