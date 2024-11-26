@@ -27,7 +27,7 @@ class MyApp:
         self.file_name_input = tk.Entry(self.frame, width=40)
         self.file_name_input.grid(row=1, column=1, pady=5)
 
-        self.divide_times_label = tk.Label(self.frame, text="Divide Times:")
+        self.divide_times_label = tk.Label(self.frame, text="Subdivision Times:")
         self.divide_times_label.grid(row=2, column=0, sticky="w")
 
         self.divide_times_input = tk.Entry(self.frame, width=40)
@@ -80,9 +80,9 @@ def __init_plugin__(self=None):
     cmd.extend("start_balloon_gui", run_gui)
 
 # PyMOL命令函数
-def pymol_Calculate_Cavity(fileName, ball_center_type, divide_times, Path=""):
+def pymol_Calculate_Cavity(fileName, ball_center_type, subdivision_time, Path=""):
     fileName = str(fileName)
     ball_center_type = str(ball_center_type)
-    divide_times = int(divide_times)
+    subdivision_time = int(subdivision_time)
     Path = str(Path)
-    Calculate_Cavity(fileName, ball_center_type, divide_times, Path)
+    Calculate_Cavity(fileName, ball_center_type, subdivision_time, Path)

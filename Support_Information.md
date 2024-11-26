@@ -85,13 +85,13 @@ The document serves as supporting material for "EXPANDING BALLOONS — A Robust 
 
 ## S2 : Center Selection Experiment Reult
 
-The following tables demonstrate the impact of the choice of sphere center on the results. The first row for each data presents the estimated cavity volume results, the cavity volume results calculated based on different sphere center, and division time parameter. The second row is the number of extension time(ET) for each result calculation. The third row is the relative error(RE) for each result calculation. As described in the paper, because many of the molecular cage data are affected by other forces such as hydrogen bonding, the actual cavity volume is smaller than the Rebek's rule based estimate. Therefore, we introduced the publication volume of the supramolecular cage to revise our results during the evaluation. The final result is the average of the two calculated results.
+The following tables demonstrate the impact of the choice of sphere center on the results. The first row for each data presents the estimated cavity volume results, the cavity volume results calculated based on different sphere center, and subdivision times parameter. The second row is the number of extension time(ET) for each result calculation. The third row is the relative error(RE) for each result calculation. As described in the paper, because many of the molecular cage data are affected by other forces such as hydrogen bonding, the actual cavity volume is smaller than the Rebek's rule based estimate. Therefore, we introduced the publication volume of the supramolecular cage to revise our results during the evaluation. The final result is the average of the two calculated results.
 
 <div align="center">
 
 ### Table S4 : Sphere Center Influence
 
-| Supramolecular Cage | Estimated\Reference Cavity Volume (Å³) | Center(Å³) | Centroid(Å³) | Symmetrical Point(Å³) | Division Time |
+| Supramolecular Cage | Estimated\Reference Cavity Volume (Å³) | Center(Å³) | Centroid(Å³) | Symmetrical Point(Å³) | Subdivision Times |
 |:------------------------------:|:-------------------:|:------:|:--------:|:-----------------:|:-----:|
 |              B1                |         273         | 312    | 303      |  314              |   4   |
 |                                |         ET =         |  31  | 31   |   31   |       |
@@ -138,7 +138,7 @@ The following tables demonstrate the impact of the choice of sphere center on th
 </div>
 
 ## S3 : SCB Result Convert
-Current mainstream biomolecular results are typically saved and presented in formats such as pdb and mol2. However, the results from SCB are displayed in the form of vertex meshes. This format is not conducive for experts to further analyze supramolecular cages using SCB. To address this, we have developed a method to convert vertex data into pdb data for better presentation of our results. In this method, each vertex is replaced by a carbon atom. Compared to the vertex, a carbon atom has a van der Waals radius (1.7 Å). Therefore, we need to perform a reverse translation of 1.7 Å in the direction of atomic expansion. Figure 1 illustrates the corresponding conversion process. The black outline represents the outer contour of the surface before vertex conversion. The red and yellow outlines represent the inner and outer surface contours after conversion. Figure 1C shows the result after the vertices have been translated.
+Current mainstream biomolecular results are typically saved and presented in formats such as pdb and mol2. However, the results from SCB are displayed in the form of vertex meshes. This format is not conducive for experts to further analyze supramolecular cages. To address this, we have developed a method to convert vertex data into pdb data for better presentation of our results. In this method, each vertex is replaced by a carbon atom. Compared to the vertex, a carbon atom has a van der Waals radius (1.7 Å). Therefore, we need to perform a reverse translation of 1.7 Å in the direction of atomic expansion. Figure 1 illustrates the corresponding conversion process. The black outline represents the outer contour of the surface before vertex conversion. The red and yellow outlines represent the inner and outer surface contours after conversion. Figure 1C shows the result after the vertices have been translated.
 
 <div align="center">
   <img src="./image/4.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
@@ -154,7 +154,7 @@ Current mainstream biomolecular results are typically saved and presented in for
 
 <div align="center">
 
-| **Cage**                      | **Estimated Volume (Å³)** | **SCB Result (Å³)** | **Division Time** | **Result**                           |
+| **Cage**                      | **Estimated Volume (Å³)** | **SCB Result (Å³)** | **Subdivision Times** | **Result**                           |
 |:----------------------------------:|:-------------------------:|:--------------:|:-----------------:|:-----------------------------------:|
 | **B1**                        | 273                       | 303            | 4                 | <img src="./image/B1.png" width="100" height="100"/>   |
 | **B2**                        | 281                       | 314            | 4                 | <img src="./image/B2.png" width="100" height="100"/>   |
@@ -175,7 +175,7 @@ Current mainstream biomolecular results are typically saved and presented in for
 
 ### Table S6 : Calculation Result of Dataset 2
 
-| **Cage** | **Reference/Average Volume (Å³)** | **SCB Result (Å³)** | **Division Time** | **Result** |
+| **Cage** | **Reference/Average Volume (Å³)** | **SCB Result (Å³)** | **Subdivision Times** | **Result** |
 |:--------:|:----------------------------------:|:--------------:|:-----------------:|:----------:|
 | **A1**   | 1375                               | 1455           | 5                 | <img src="./image/A1.png" width="100" height="100"/> |
 | **C1**   | 549                                | 592            | 5                 | <img src="./image/C1.png" width="100" height="100"/> |
@@ -190,27 +190,27 @@ Current mainstream biomolecular results are typically saved and presented in for
 </div>
 
 
-The selection of parameters in the experiment is primarily based on two principles: data analysis results of division times and comparison of visualization results.   First, we examine the impact of division times on the calculation results for dataset 1 from the paper.   The SCB method's first step is the grid's surface division.   This step is similar to grid partitioning in grid-based methods, where the number of divisions affects the precision and computation time of the final results.   Figure 2 shows the relationship between Division Time (DT) and SCB computation time.  Due to the subdivision surface algorithm causing an exponential increase in the number of vertices, the corresponding computation time also increases with the times of subdivision surface.  It is evident that after six grid divisions, the computation time reaches an unacceptable magnitude (55 seconds).   Therefore, the division parameters should only be between 3, 4, and 5.   In Figure 2, the blue, green, and yellow lines represent the calculation results for subdivision times of 3, 4, and 5, respectively.
+The selection of parameters in the experiment is primarily based on two principles: data analysis results of subdivision times and comparison of visualization results.   First, we examine the impact of subdivision times on the calculation results for dataset 1 from the paper.   The SCB method's first step is the grid's subdivision surface .   This step is similar to grid partitioning in grid-based methods, where the number of divisions affects the precision and computation time of the final results.   Figure 2 shows the relationship between subdivision times (ST) and SCB computation time.  Due to the subdivision surface algorithm causing an exponential increase in the number of vertices, the corresponding computation time also increases with the times of subdivision surface.  It is evident that after six grid divisions, the computation time reaches an unacceptable magnitude (55 seconds).   Therefore, the subdivision parameters should only be between 3, 4, and 5.   In Figure 2, the blue, green, and yellow lines represent the calculation results for subdivision times of 3, 4, and 5, respectively.
 
 
 <p align="center">
-  <img src="./image/1.png" alt="计算时间与网格划分之间的关系" style="width:50%;">
-  <br><em>图2:计算时间与网格划分之间的关系。</em>
+  <img src="./image/1.png" alt="The effect of the subdivision times on the calculation time." style="width:50%;">
+  <br><em>Figure 2: The effect of the subdivision times on the calculation time.</em>
 </p>
 
 
-By observing the graphs, it can be concluded that SCB yields better results for larger supramolecular cages (Cavity Volume > 500) when DT = 5. However, for other supramolecular cage cavity calculations, the impact of DT on the results is not significant, as shown in Figure 3A. Hence, we introduced the Origin Publication cavity volume as a comparison parameter based on Rebek's rule (Figure 3B). DT = 3 has higher calculation accuracy for smaller supramolecular cages. DT = 4 shows more stable and higher accuracy across both calculation references. To further explore the choice of calculation parameters, we visualized the data with smaller cavity volumes (B5, B6).
+By observing the graphs, it can be concluded that SCB yields better results for larger supramolecular cages (Cavity Volume > 500) when ST = 5. However, for other supramolecular cage cavity calculations, the impact of ST on the results is not significant, as shown in Figure 3A. Hence, we introduced the Origin Publication cavity volume as a comparison parameter based on Rebek's rule (Figure 3B). ST = 3 has higher calculation accuracy for smaller supramolecular cages. ST = 4 shows more stable and higher accuracy across both calculation references. To further explore the choice of calculation parameters, we visualized the data with smaller cavity volumes (B5, B6).
 
 
-By comparing the visualization results, the shape of the calculated results did not change, the size did.    We believe the change in size is due to finer probes exploring small spaces between atoms—spaces that cavity guest molecules cannot physically reach.    moreover, by combining the charts, It is evident that these small spaces are not considered part of the supramolecular cage's cavity (fewer vertices result in higher accuracy).    Therefore, we conclude that results for DT = 3 or 4 are acceptable compared to DT = 5.    Considering the comparison with mean absolute error(Figure 3 dotted line) in Figure 2, we ultimately recommend using DT = 4 as the parameter when the volume of the supramolecular cage is less than 500.
+By comparing the visualization results, the shape of the calculated results did not change, the size did.    We believe the change in size is due to finer probes exploring small spaces between atoms—spaces that cavity guest molecules cannot physically reach.    moreover, by combining the charts, It is evident that these small spaces are not considered part of the supramolecular cage's cavity (fewer vertices result in higher accuracy).    Therefore, we conclude that results for ST = 3 or 4 are acceptable compared to ST = 5.    Considering the comparison with mean absolute error(dotted line in Figure 3), we ultimately recommend using ST = 4 as the parameter when the volume of the supramolecular cage is less than 500.
 <p align="center">
-  <img src="./image/2.png" alt="分裂次数对最终效果的影响。" style="width:100%;">
-  <br><em>图3:分裂次数对最终效果的影响。</em>
+  <img src="./image/2.png" alt="The effect of the subdivision times on the final result." style="width:100%;">
+  <br><em>Figure 3: The effect of the subdivision times on the final result.</em>
 </p>
 
 <p align="center">
-  <img src="./image/3.png" alt="B5、B6的空腔计算可视化结果。" style="width:50%;">
-  <br><em>图4:B5、B6的空腔计算可视化结果。</em>
+  <img src="./image/3.png" alt=" Cavity visualization results of B5 and B6." style="width:50%;">
+  <br><em>Figure 4: Cavity visualization results of B5 and B6.</em>
 </p>
 
 
