@@ -189,7 +189,7 @@ The selection of parameters in the experiment is primarily based on two principl
 
 <p align="center">
   <img src="./image/1.png" alt="The effect of the subdivision times on the calculation time." style="width:50%;">
-  <br><em>Figure 2: The effect of the subdivision times on the calculation time.</em>
+  <br><em>Figure 1: The effect of the subdivision times on the calculation time.</em>
 </p>
 
 
@@ -199,12 +199,12 @@ By observing the graphs, it can be concluded that SCB yields better results for 
 By comparing the visualization results, the shape of the calculated results did not change, the size did.    We believe the change in size is due to finer probes exploring small spaces between atoms—spaces that cavity guest molecules cannot physically reach.    moreover, by combining the charts, It is evident that these small spaces are not considered part of the supramolecular cage's cavity (fewer vertices result in higher accuracy).    Therefore, we conclude that results for ST = 3 or 4 are acceptable compared to ST = 5.    Considering the comparison with mean absolute error(dotted line in Figure 3), we ultimately recommend using ST = 4 as the parameter when the volume of the supramolecular cage is less than 500.
 <p align="center">
   <img src="./image/2.png" alt="The effect of the subdivision times on the final result." style="width:100%;">
-  <br><em>Figure 3: The effect of the subdivision times on the final result.</em>
+  <br><em>Figure 2: The effect of the subdivision times on the final result.</em>
 </p>
 
 <p align="center">
   <img src="./image/3.png" alt=" Cavity visualization results of B5 and B6." style="width:50%;">
-  <br><em>Figure 4: Cavity visualization results of B5 and B6.</em>
+  <br><em>Figure 3: Cavity visualization results of B5 and B6.</em>
 </p>
 
 ## S4 : SCB Result Convert
@@ -212,7 +212,7 @@ Current mainstream biomolecular results are typically saved and presented in for
 
 <div align="center">
   <img src="./image/4.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
-  <p><em>Figure 1 : SCB Result Convert Process.</em></p>
+  <p><em>Figure 4: SCB Result Convert Process.</em></p>
 </div>
 
 
