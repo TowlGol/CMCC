@@ -83,15 +83,15 @@ The document serves as supporting material for "EXPANDING BALLOONS — A Robust 
 </div>
 
 
-## S2 : Center Selection Experiment Reult
+## S2 : Sphere Center Selection Experiment Reult
 
-The following tables demonstrate the impact of the choice of sphere center on the results. The first row for each data presents the estimated cavity volume results, the cavity volume results calculated based on different sphere center, and subdivision times parameter. The second row is the number of extension time(ET) for each result calculation. The third row is the relative error(RE) for each result calculation. As described in the paper, because many of the molecular cage data are affected by other forces such as hydrogen bonding, the actual cavity volume is smaller than the Rebek's rule based estimate. Therefore, we introduced the publication volume of the supramolecular cage to revise our results during the evaluation. The final result is the average of the two calculated results.
+The following tables demonstrate the impact of the choice of sphere center on the results. The first row for each data presents the estimated cavity volume results, the cavity volume results calculated based on different point, and subdivision times parameter. The second row is the number of extension time(ET) for each result calculation. The third row is the relative error(RE) for each result calculation. As described in the paper, because many of the molecular cage data are affected by other forces such as hydrogen bonding, the actual cavity volume is smaller than the Rebek's rule based estimate. Therefore, we introduced the publication volume of the supramolecular cage to revise our results during the evaluation. The final result is the average of the two calculated results.
 
 <div align="center">
 
 ### Table S4 : Sphere Center Influence
 
-| Supramolecular Cage | Estimated\Reference Cavity Volume (Å³) | Center(Å³) | Centroid(Å³) | Symmetrical Point(Å³) | Subdivision Times |
+| Supramolecular Cage | Estimated\Reference Cavity Volume (Å³) | Centroid(Å³) | Center of Mass(Å³)  | Symmetrical Point(Å³) | Subdivision Times |
 |:------------------------------:|:-------------------:|:------:|:--------:|:-----------------:|:-----:|
 |              B1                |         273         | 312    | 303      |  314              |   4   |
 |                                |         ET =         |  31  | 31   |   31   |       |
@@ -137,20 +137,14 @@ The following tables demonstrate the impact of the choice of sphere center on th
 
 </div>
 
-## S3 : SCB Result Convert
-Current mainstream biomolecular results are typically saved and presented in formats such as pdb and mol2. However, the results from SCB are displayed in the form of vertex meshes. This format is not conducive for experts to further analyze supramolecular cages. To address this, we have developed a method to convert vertex data into pdb data for better presentation of our results. In this method, each vertex is replaced by a carbon atom. Compared to the vertex, a carbon atom has a van der Waals radius (1.7 Å). Therefore, we need to perform a reverse translation of 1.7 Å in the direction of atomic expansion. Figure 1 illustrates the corresponding conversion process. The black outline represents the outer contour of the surface before vertex conversion. The red and yellow outlines represent the inner and outer surface contours after conversion. Figure 1C shows the result after the vertices have been translated.
-
-<div align="center">
-  <img src="./image/4.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
-  <p><em>Figure 1 : SCB Result Convert Process.</em></p>
-</div>
 
 
-## S4 : Experimental Results
+
+## S3 : Parameters Selection and Experimental Results
 
 <div align="center">
 
-### Table S5 : Calculation Result of Dataset 1  
+### Table S5 : Parameters and Calculation Result of Dataset 1  
 
 <div align="center">
 
@@ -173,7 +167,7 @@ Current mainstream biomolecular results are typically saved and presented in for
 </div>
 
 
-### Table S6 : Calculation Result of Dataset 2
+### Table S6 : Parameters and Calculation Result of Dataset 2
 
 | **Cage** | **Reference/Average Volume (Å³)** | **SCB Result (Å³)** | **Subdivision Times** | **Result** |
 |:--------:|:----------------------------------:|:--------------:|:-----------------:|:----------:|
@@ -213,6 +207,12 @@ By comparing the visualization results, the shape of the calculated results did 
   <br><em>Figure 4: Cavity visualization results of B5 and B6.</em>
 </p>
 
+## S4 : SCB Result Convert
+Current mainstream biomolecular results are typically saved and presented in formats such as pdb and mol2. However, the results from SCB are displayed in the form of vertex meshes. This format is not conducive for experts to further analyze supramolecular cages. To address this, we have developed a method to convert vertex data into pdb data for better presentation of our results. In this method, each vertex is replaced by a carbon atom. Compared to the vertex, a carbon atom has a van der Waals radius (1.7 Å). Therefore, we need to perform a reverse translation of 1.7 Å in the direction of atomic expansion. Figure 1 illustrates the corresponding conversion process. The black outline represents the outer contour of the surface before vertex conversion. The red and yellow outlines represent the inner and outer surface contours after conversion. Figure 1C shows the result after the vertices have been translated.
 
+<div align="center">
+  <img src="./image/4.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
+  <p><em>Figure 1 : SCB Result Convert Process.</em></p>
+</div>
 
 
