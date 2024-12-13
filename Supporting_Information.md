@@ -1,6 +1,6 @@
 # Supporting Information
 
-The document serves as supporting material for "EXPANDING BALLOONS — A Robust Computational Method for Determining Supramolecular Cage Cavity Morphology Based on the 'Inflating Balloon' Metaphor." It provides further explanations of four parts of the paper: comparison of working parameters [(S1)](#s1-compare-working-parameter), center selection experiment [(S2)](#s2--center-selection-experiment-reult), SCB vertex result conversion [(S3)](#user-content-s3--parameters-selection-and-experimental-results), and experimental parameters and results of the baseline dataset [(S4)](#user-content-s4--scb-result-convert). If you want to know the detil about how to install and use SCB, you can visit GitHub for details and code.
+The document serves as supporting material for "EXPANDING BALLOONS — A Robust Computational Method for Determining Supramolecular Cage Cavity Morphology Based on the 'Inflating Balloon' Metaphor." It provides further explanations of four parts of the paper: comparison of working parameters [(S1)](#s1-compare-working-parameter), center selection experiment [(S2)](#s2--center-selection-experiment-reult), SCB vertex result conversion [(S3)](#s3--parameters-selection-and-experimental-results), and experimental parameters and results of the baseline dataset [(S4)](#s4--scb-result-convert). If you want to know the detil about how to install and use SCB, you can visit GitHub for details and code.
 
 ## S1: Compare Working Parameter
 <div align="center">
@@ -102,38 +102,38 @@ The following tables demonstrate the impact of the choice of sphere center on th
 |              B3                |       248/270       | 293  | 296  |  296   |   4   |
 |                                |        ET =         |  32  | 30   |   32   |       |
 |                                |        RE =          |  18.1/8.5|19.3/9.6  |  19.3/9.6  |       |
-|              B4                |       562/434       | 464  | 455  |  482   |   4   |
-|                                |        ET =        |         21          | 18   | 22   |        |       |
-|                                |        RE =          |     -17.4/6.9     |-19.0/4.8|-14.2/11.0|    |       |
+|              B4                |       562/434       | 508  | 505  |  524   |   5   |
+|                                |        ET =        |         28          | 24   | 30   |        |       |
+|                                |        RE =          |     -9.6/17.0     |-10.1/16.3|-6.7/20.7|    |       |
 |              B5                |        90/52        | 77   | 78   |   79   |   4   |
 |                                |        ET =        |         20          | 20   | 18   |        |       |
 |                                |       RE =          |     -14.4/48.0     |-13.3/51.9|-12.2/51.9|    |       |
 |              B6                |        96/55        | 74   | 74   |   74   |   4   |
 |                                |        ET =         |         16          | 16   | 16   |        |       |
 |                                |        RE =         |     -22.9/34.5     |-22.9/34.5|-22.9/34.5|    |       |
-|              B7                |       944/810       | 860  | 826  |  893   |   4   |
-|                                |        ET =         |         32          | 25   | 32   |        |       |
-|                                |       RE =         |      -8.8/6.1    | -12.5/1.9 |-5.4/10.2|    |       |
-|              B8                |         930         | 825  | 822  |  861   |   4   |
-|                                |        ET =         |         21          | 27   | 28   |        |       |
-|                                |        RE =         |    -11.2    |-11.6|-7.4|    |       |
+|              B7                |       944/810       | 944  | 890  |  979   |   5   |
+|                                |        ET =         |         38          | 36   | 43   |        |       |
+|                                |       RE =         |      0/16.5    | -5.7/9.8 |3.7/20.8|    |       |
+|              B8                |         930         | 872  | 861  |  914   |   5   |
+|                                |        ET =         |         31          | 31   | 31   |        |       |
+|                                |        RE =         |    -6.2    |-7.4|-1.7|    |       |
 |              B9                |       257/184       | 225  | 226  |  225   |   4   |
 |                                |        ET =         |         20          | 20   | 18   |        |       |
 |                                |        RE =         |     -12.4/22.2     |-12.0/22.8|-12.4/22.2|    |       |
 |             B10                |       274/261       | 291  | 288  |  291   |   4   |
 |                                |        ET =        |         34          | 34   | 35   |        |       |
 |                                |        RE =         |      6.2/11.4    |5.1/10.3|6.2/11.4|    |       |
-|             B11                |         558         | 516  | 517  |  514   |   4   |
-|                                |        ET =         |         23          | 23   | 24   |        |       |
-|                                |       RE =          |      -7.5    |-7.3|-7.8|    |       |
+|             B11                |         558         | 557  | 554  |  554   |   5   |
+|                                |        ET =         |         47          | 49   | 47   |        |       |
+|                                |       RE =          |      -0.1    |-0.7|-0.7|    |       |
 |             B12                |        954/718      | 720  | 720  |  721   |   5   |
 |                                |         ET =         |         29          | 29   | 31   |        |       |
 |                                |        RE =         |     -24.5/0.2     |-24.5/0.2|-24.4/0.4|    |       |
 |             B13                |      1123/925       | 845  | 846  |  850   |   5   |
 |                                |       ET =          |         39          | 39   | 38   |        |       |
 |                                |       RE =          |     -24.7/-8.6     |-24.6/-8.5|-24.3/-8.1|    |       |
-|           **MEAE (%)**         |                     |15.0/14.7|15.0/14.2|14.2/15.5|   -   |
-|             **Times**          |                     |    27    |26.5|27.5|       |
+|           **MEAE (%)**         |                     |14.1|13.9|14.3|   -   |
+|             **Times**          |                     |    30.3    |29.9|30.6|    -   |
 
 </div>
 
@@ -211,8 +211,23 @@ By comparing the visualization results, the shape of the calculated results did 
 Current mainstream biomolecular results are typically saved and presented in formats such as pdb and mol2. However, the results from SCB are displayed in the form of vertex meshes. This format is not conducive for experts to further analyze supramolecular cages. To address this, we have developed a method to convert vertex data into pdb data for better presentation of our results. In this method, each vertex is replaced by a carbon atom. Compared to the vertex, a carbon atom has a van der Waals radius (1.7 Å). Therefore, we need to perform a reverse translation of 1.7 Å in the direction of atomic expansion. Figure 1 illustrates the corresponding conversion process. The black outline represents the outer contour of the surface before vertex conversion. The red and yellow outlines represent the inner and outer surface contours after conversion. Figure 1C shows the result after the vertices have been translated.
 
 <div align="center">
-  <img src="./image/4.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
+  <img src="./image/4.png" alt="SCB Convert Proecss" style="width:100%;">
   <p><em>Figure 4: SCB Result Convert Process.</em></p>
+</div>
+
+
+## S5 : Step Length Effect
+
+In order to select the optimal step length, we conducted experiments using various step lengths. The experiments evaluated the impact of step length on MRAE and cost time for each cavity calculation(Table S7). The results indicate that a step length of 0.1 Å achieves a balance between MRAE and cost time.
+
+<div align="center">
+
+### Table S7 : Parameters and Calculation Result of Dataset 2
+| **Step Length(Å)** | **0.01** | **0.05** | **0.1** | **0.15** |**0.2**|
+|:--------:|:----------------------------------:|:--------------:|:-----------------:|:----------:|:----------:|
+| **MRAE(%)**   | 12.8                               | 12.9           | 12.9                 |13.2  |13.7|
+| **Cost Time(S)**   | 36                                | 12.9            | 9.2                 |  10.6 | 11.3
+
 </div>
 
 
