@@ -1,8 +1,8 @@
 # Supporting Information
 
-The document serves as supporting material for "EXPANDING BALLOONS — A Robust Computational Method for Determining Supramolecular Cage Cavity Morphology Based on the 'Inflating Balloon' Metaphor." It provides further explanations of four parts of the paper: comparison of working parameters [(S1)](#s1-compare-working-parameter), center selection experiment [(S2)](#s2--center-selection-experiment-reult), SCB vertex result conversion [(S3)](#s3--parameters-selection-and-experimental-results), and experimental parameters and results of the baseline dataset [(S4)](#s4--scb-result-convert). If you want to know the detil about how to install and use SCB, you can visit GitHub for details and code.
+The document serves as supporting material for "EXPANDING BALLOONS — A Robust Computational Method for Determining Supramolecular Cage Cavity Morphology Based on the 'Inflating Balloon' Metaphor." It provides further explanations of four parts of the paper: comparison of working parameters [(S1)](#s1-compare-working-parameter), center selection experiment [(S2)](#s2--center-selection-experiment-reult), SCB vertex result conversion [(S3)](#s3--parameters-selection-and-experimental-results),  experimental parameters and results of the baseline dataset [(S4)](#s4--scb-result-convert), and detail of step length selection experiment[(S5)](#s5--step-length-selection-experiment). For detailed information on how to install and use SCB, please refer to the GitHub repository for comprehensive documentation and source code.
 
-## S1: Compare Working Parameter
+## S1: Compare working parameter
 <div align="center">
 
 ### Table S1 : KVFinder project detecte properties. 
@@ -83,13 +83,13 @@ The document serves as supporting material for "EXPANDING BALLOONS — A Robust 
 </div>
 
 
-## S2 : Sphere Center Selection Experiment Reult
+## S2 : Sphere center selection experiment reult
 
 The following tables demonstrate the impact of the choice of sphere center on the results. The first row for each data presents the estimated cavity volume results, the cavity volume results calculated based on different point, and subdivision times parameter. The second row is the number of extension time(ET) for each result calculation. The third row is the relative error(RE) for each result calculation. As described in the paper, because many of the molecular cage data are affected by other forces such as hydrogen bonding, the actual cavity volume is smaller than the Rebek's rule based estimate. Therefore, we introduced the publication volume of the supramolecular cage to revise our results during the evaluation. The final result is the average of the two calculated results.
 
 <div align="center">
 
-### Table S4 : Sphere Center Influence
+### Table S4 : Sphere center influence
 
 | Supramolecular Cage | Estimated\Reference Cavity Volume (Å³) | Centroid(Å³) | Center of Mass(Å³)  | Symmetrical Point(Å³) | Subdivision Times |
 |:------------------------------:|:-------------------:|:------:|:--------:|:-----------------:|:-----:|
@@ -140,11 +140,11 @@ The following tables demonstrate the impact of the choice of sphere center on th
 
 
 
-## S3 : Parameters Selection and Experimental Results
+## S3 : Parameters selection and experimental results
 
 <div align="center">
 
-### Table S5 : Parameters and Calculation Result of Dataset 1  
+### Table S5 : Parameters and calculation result of dataset 1  
 
 <div align="center">
 
@@ -167,7 +167,7 @@ The following tables demonstrate the impact of the choice of sphere center on th
 </div>
 
 
-### Table S6 : Parameters and Calculation Result of Dataset 2
+### Table S6 : Parameters and calculation result of dataset 2
 
 | **Cage** | **Reference/Average Volume (Å³)** | **SCB Result (Å³)** | **Subdivision Times** | **Result** |
 |:--------:|:----------------------------------:|:--------------:|:-----------------:|:----------:|
@@ -207,7 +207,7 @@ By comparing the visualization results, the shape of the calculated results did 
   <br><em>Figure 3: Cavity visualization results of B5 and B6.</em>
 </p>
 
-## S4 : SCB Result Convert
+## S4 : SCB result convert
 Current mainstream biomolecular results are typically saved and presented in formats such as pdb and mol2. However, the results from SCB are displayed in the form of vertex meshes. This format is not conducive for experts to further analyze supramolecular cages. To address this, we have developed a method to convert vertex data into pdb data for better presentation of our results. In this method, each vertex is replaced by a carbon atom. Compared to the vertex, a carbon atom has a van der Waals radius (1.7 Å). Therefore, we need to perform a reverse translation of 1.7 Å in the direction of atomic expansion. Figure 1 illustrates the corresponding conversion process. The black outline represents the outer contour of the surface before vertex conversion. The red and yellow outlines represent the inner and outer surface contours after conversion. Figure 1C shows the result after the vertices have been translated.
 
 <div align="center">
@@ -216,7 +216,7 @@ Current mainstream biomolecular results are typically saved and presented in for
 </div>
 
 
-## S5 : Step Length Selection Experiment
+## S5 : Step length selection experiment
 
 In order to select the optimal step length, we conducted experiments using various step lengths. The experiments evaluated the impact of step length on MRAE and cost time for each cavity calculation(Table S7). The results indicate that a step length of 0.1 Å achieves a balance between MRAE and cost time.
 
