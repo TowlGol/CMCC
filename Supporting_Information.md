@@ -216,7 +216,7 @@ Current mainstream biomolecular results are typically saved and presented in for
 </div>
 
 
-## S5 : Step Length Effect
+## S5 : Step Length Selection Experiment
 
 In order to select the optimal step length, we conducted experiments using various step lengths. The experiments evaluated the impact of step length on MRAE and cost time for each cavity calculation(Table S7). The results indicate that a step length of 0.1 Å achieves a balance between MRAE and cost time.
 
