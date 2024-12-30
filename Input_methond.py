@@ -45,7 +45,7 @@ def read_positions_and_atom_names_from_file(filename):
     """
     positions = None
     atom_names = None
-
+ 
     print("FileName = " + filename)
     if filename.endswith(".pdb"):
         positions, atom_names = read_pdb(filename)

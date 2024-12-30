@@ -18,7 +18,7 @@ def atom_names_to_masses(names):
             atom_masses.append(0.0)
     return np.array(atom_masses)
 
-
+ 
 def atom_names_to_vdw(names):
     """
     根据原子名称获取范德华半径。

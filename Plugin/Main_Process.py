@@ -8,12 +8,12 @@ class MyApp:
     def __init__(self, master):
         self.master = master
         self.master.title("Expanding Balloon----Cavity Calculation")
-        self.master.geometry("400x300")  # 设置窗口大小
+        self.master.geometry("400x240")  # 设置窗口大小
         self.master.resizable(False, False)  # 禁止窗口调整大小
 
         # 创建一个框架以组织界面
-        self.frame = tk.Frame(master, padx=10, pady=10)
-        self.frame.pack(padx=10, pady=10)
+        self.frame = tk.Frame(master, padx=10, pady=6)
+        self.frame.pack(padx=10, pady=6)
 
         self.file_path_label = tk.Label(self.frame, text="File Path Input:")
         self.file_path_label.grid(row=0, column=0, sticky="w")
@@ -33,11 +33,11 @@ class MyApp:
         self.divide_times_input = tk.Entry(self.frame, width=40)
         self.divide_times_input.grid(row=2, column=1, pady=5)
 
-        self.ball_center_type_label = tk.Label(self.frame, text="Ball Center Type:")
-        self.ball_center_type_label.grid(row=3, column=0, sticky="w")
+        self.output_path_label = tk.Label(self.frame, text="Output Path:")
+        self.output_path_label.grid(row=3, column=0, sticky="w")
 
-        self.ball_center_type_input = tk.Entry(self.frame, width=40)
-        self.ball_center_type_input.grid(row=3, column=1, pady=5)
+        self.output_path_input = tk.Entry(self.frame, width=40)
+        self.output_path_input.grid(row=3, column=1, pady=5)
 
         self.execute_button = tk.Button(self.frame, text="Execute", command=self.execute_command, bg='blue', fg='white')
         self.execute_button.grid(row=4, columnspan=2, pady=10)
@@ -46,11 +46,12 @@ class MyApp:
         file_path = self.file_path_input.get()
         file_name = self.file_name_input.get()
         divide_times = self.divide_times_input.get()
-        ball_center_type = self.ball_center_type_input.get()
+        output_path = self.output_path_input.get()
         
         file_path_output = os.path.dirname(os.path.abspath(__file__)) + "/Expanding_Balloon/examples"
+        file_path_output = output_path
         
-        command = f"balloon.Calculate_Cavity('{file_name}', '{ball_center_type}', '{divide_times}', r'{file_path}/', r'{file_path_output}/')"
+        command = f"balloon.Calculate_Cavity('{file_name}', '2', '{divide_times}', r'{file_path}/', r'{file_path_output}/')"
         cmd.do(command)
 
 def run_gui():
@@ -65,9 +66,9 @@ sys.path.append(plugin_dir)
 # 插件入口函数
 def __init_plugin__(self=None):
 
-    for path in sys.path:
-        if os.path.exists(os.path.join(path, 'startup')):
-            print(f"Dir: {os.path.join(path, 'startup')}")
+    # for path in sys.path:
+    #     if os.path.exists(os.path.join(path, 'startup')):
+    #         print(f"Dir: {os.path.join(path, 'startup')}")
 
     try:
         from Expanding_Balloon.Cavity_Calculation import cavity

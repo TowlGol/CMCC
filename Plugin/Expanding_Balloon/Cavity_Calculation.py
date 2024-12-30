@@ -1,5 +1,7 @@
 import numpy as np
 import math
+import os
+import shutil
 from scipy.spatial import KDTree
 
 from Expanding_Balloon.Balloon import Start_Imitation, Init_Vertex
@@ -182,9 +184,14 @@ class cavity():
 
     def Calculate_Cavity(self,fileName, ball_center_type, divide_times, file_input_path="", file_output_path=""):
         fileName = fileName.split(',')
+        path = os.path.dirname(os.path.abspath(__file__)) + "/examples"
         for file in fileName:
             self.read_file(file_input_path, file)
-            self.calculate_volum_by_balloon(file_output_path, ball_center_type, divide_times)
+            self.calculate_volum_by_balloon(path, ball_center_type, divide_times)
+            shutil.copy(file_input_path+"/PDB/"+ file.split('.')[0]+"_cavity.pdb",file_output_path)
+            
+
+
     #
     def calculate_center_and_radius(self):
         # 计算孔的质心，使用 RDKit
