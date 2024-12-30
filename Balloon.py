@@ -36,8 +36,9 @@ balloon_vertex_group = []
 
 #是否完成扩展
 extension_finished = False
-balloon_extension_origin = []
 balloon_extension_vector = []
+balloon_extension_origin = []
+
 
 file_name = ""
 balloon_influence = []

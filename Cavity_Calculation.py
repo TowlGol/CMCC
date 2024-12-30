@@ -20,8 +20,8 @@ class cavity():
         self.positions = None
         self.atom_names = None
         self.atom_masses = None
-        self.atom_vdw = None
         self.n_atoms = 0
+        self.atom_vdw = None
         self.filename = None  # original file of the cage (might be needed to conversion to rdkit in case of hydrophobicity calculation)
         self.INT_MAX = 100005
         self.vdwR_dict = {}  # 存储每种原子类型的范德华半径
@@ -38,7 +38,7 @@ class cavity():
         self.positions, self.atom_names, self.atom_masses, self.atom_vdw = read_positions_and_atom_names_from_file(
             str(Path)+str(filename))
         self.n_atoms = len(self.positions)
-
+ 
     def distance_point_to_ray(self, point, ray_origin, ray_direction):
         """
             计算点到射线的最短距离。
