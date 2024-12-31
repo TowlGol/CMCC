@@ -1,5 +1,6 @@
 import math
 import time
+import os
 import warnings
 import pymeshlab as ml
 import numpy as np
@@ -1189,8 +1190,9 @@ def save_Calculation_Result():
 
     # 创建新的网格对象并设置顶点和面
     tmp_name = file_name[:-4]
-    pdb_out_path = Path+"/PDB/"
+    pdb_out_path = Path
     obj_out_path = Path+"/OBJ/"
+    obj_out_path = ""
 
     vertices = np.asarray(new_vertices, dtype=np.float32)
     faces = np.asarray(faces, dtype=np.int32)
@@ -1199,6 +1201,7 @@ def save_Calculation_Result():
     mesh = ml.Mesh(vertices, faces)
     ms.add_mesh(mesh, 'my_mesh')
     ms.save_current_mesh(obj_out_path + tmp_name + '.obj')
+    
 
     name = tmp_name
     obj_file_path = obj_out_path + name + '.obj'
@@ -1208,20 +1211,24 @@ def save_Calculation_Result():
     write_pdb(vertices, pdb_file_path)
 
     vertices, faces = read_obj_file(obj_out_path + name + '.obj')
-    print(f"volume (mesh Lab) = {volume_of_mesh(vertices, faces)}")
+    print(f"volume: {volume_of_mesh(vertices, faces)}")
 
+
+    os.remove(obj_out_path + name + '.obj')
     # 创建pml文件
     name = name+"_Cavity"
     pml_name = Path+tmp_name + '.pml'
     with open(pml_name, 'w') as file:
         file.write(f"load " + tmp_name + ".pdb\n")
-        file.write(f"load PDB/" + name +'.pdb' + "\n")
+        file.write(f"load " + name +'.pdb' + "\n")
 
         file.write(f"select " + name + "\n")
         file.write(f"hide everything, " + name + "\n")
         file.write(f"show surface, " + name + "\n")
         file.write(f"cmd.color_deep(\"white\", '" + name + "', 0)\n")
         file.write(f"util.cba(33,\"" + tmp_name + "\",_self=cmd)\n")
+    
+    
 
 
 def parse_obj(obj_file_path):
@@ -1351,7 +1358,7 @@ def run_process():
     end_time = time.time()
     execution_time = end_time - start_time
     print("iteration times: " + str(extension_times))
-    print(f"execution time: {execution_time} seconds")
+    print(f"execution time: {execution_time} 秒")
 
 
 

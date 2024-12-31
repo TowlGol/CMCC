@@ -187,8 +187,13 @@ class cavity():
         path = os.path.dirname(os.path.abspath(__file__)) + "/examples"
         for file in fileName:
             self.read_file(file_input_path, file)
-            self.calculate_volum_by_balloon(path, ball_center_type, divide_times)
-            shutil.copy(file_input_path+"/PDB/"+ file.split('.')[0]+"_cavity.pdb",file_output_path)
+            self.calculate_volum_by_balloon(file_input_path, ball_center_type, divide_times)
+            filepath = file_input_path+""+ file.split('.')[0]+"_cavity.pdb"
+            filepath = filepath.replace("\\", "/")
+            try: 
+                shutil.copy(filepath,file_output_path)
+            except:
+                print("Please check the output path")
             
 
 
