@@ -1216,17 +1216,17 @@ def save_Calculation_Result():
 
     os.remove(obj_out_path + name + '.obj')
     # 创建pml文件
-    name = name+"_Cavity"
-    pml_name = Path+tmp_name + '.pml'
-    with open(pml_name, 'w') as file:
-        file.write(f"load " + tmp_name + ".pdb\n")
-        file.write(f"load " + name +'.pdb' + "\n")
-
-        file.write(f"select " + name + "\n")
-        file.write(f"hide everything, " + name + "\n")
-        file.write(f"show surface, " + name + "\n")
-        file.write(f"cmd.color_deep(\"white\", '" + name + "', 0)\n")
-        file.write(f"util.cba(33,\"" + tmp_name + "\",_self=cmd)\n")
+    # name = name+"_Cavity"
+    # pml_name = Path+tmp_name + '.pml'
+    # with open(pml_name, 'w') as file:
+    #     file.write(f"load " + tmp_name + ".pdb\n")
+    #     file.write(f"load " + name +'.pdb' + "\n")
+    #
+    #     file.write(f"select " + name + "\n")
+    #     file.write(f"hide everything, " + name + "\n")
+    #     file.write(f"show surface, " + name + "\n")
+    #     file.write(f"cmd.color_deep(\"white\", '" + name + "', 0)\n")
+    #     file.write(f"util.cba(33,\"" + tmp_name + "\",_self=cmd)\n")
     
     
 

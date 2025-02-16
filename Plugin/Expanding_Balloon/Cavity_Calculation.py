@@ -190,8 +190,9 @@ class cavity():
             self.calculate_volum_by_balloon(file_input_path, ball_center_type, divide_times)
             filepath = file_input_path+""+ file.split('.')[0]+"_cavity.pdb"
             filepath = filepath.replace("\\", "/")
-            try: 
+            try:
                 shutil.copy(filepath,file_output_path)
+                os.remove(filepath)
             except:
                 print("Please check the output path")
             
