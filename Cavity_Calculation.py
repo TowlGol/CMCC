@@ -4,9 +4,9 @@ import os
 import shutil
 from scipy.spatial import KDTree
 
-from Expanding_Balloon.Balloon import Start_Imitation, Init_Vertex
-from Expanding_Balloon.data import vdw_radii
-from Expanding_Balloon.Input_methond import read_positions_and_atom_names_from_file
+from Balloon import Start_Imitation, Init_Vertex
+from data import vdw_radii
+from Input_methond import read_positions_and_atom_names_from_file
 
 
 class cavity():

@@ -4,7 +4,6 @@ import os
 import warnings
 import pymeshlab as ml
 import numpy as np
-from pymol import cmd
 from Bio.PDB import *
 from Bio.PDB.PDBExceptions import PDBConstructionWarning
 
