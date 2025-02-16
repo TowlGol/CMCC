@@ -19,6 +19,7 @@ Installation of the tool is very simple and requires only a few steps:
 2. install the modle in Python environment:
   ```python
   # If you have these environments installed, skip this step.
+  pip install numpy
   pip install scipy
   pip install pymeshlab
   pip install Bio
