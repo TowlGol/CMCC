@@ -1,14 +1,13 @@
 import numpy as np
 import math
+import os
+import shutil
 from scipy.spatial import KDTree
 
-# from Extension_Balloon.Balloon import Start_Imitation, Init_Vertex
-# from Extension_Balloon.data import vdw_radii
-# from Extension_Balloon.Input_methond import read_positions_and_atom_names_from_file
+from Expanding_Balloon.Balloon import Start_Imitation, Init_Vertex
+from Expanding_Balloon.data import vdw_radii
+from Expanding_Balloon.Input_methond import read_positions_and_atom_names_from_file
 
-from Balloon import Start_Imitation, Init_Vertex
-from data import vdw_radii
-from Input_methond import read_positions_and_atom_names_from_file
 
 class cavity():
     def __init__(self):
@@ -20,14 +19,14 @@ class cavity():
         self.positions = None
         self.atom_names = None
         self.atom_masses = None
-        self.n_atoms = 0
         self.atom_vdw = None
+        self.n_atoms = 0
         self.filename = None  # original file of the cage (might be needed to conversion to rdkit in case of hydrophobicity calculation)
         self.INT_MAX = 100005
         self.vdwR_dict = {}  # 存储每种原子类型的范德华半径
         # Init_All_DATA()
 
-    def read_file(self, Path,filename):
+    def read_file(self, Path, filename):
         """
         从指定文件读取原子位置信息和名称。
 
@@ -36,9 +35,9 @@ class cavity():
         self.__init__()
         self.filename = filename
         self.positions, self.atom_names, self.atom_masses, self.atom_vdw = read_positions_and_atom_names_from_file(
-            str(Path)+str(filename))
+            str(Path) + str(filename))
         self.n_atoms = len(self.positions)
- 
+
     def distance_point_to_ray(self, point, ray_origin, ray_direction):
         """
             计算点到射线的最短距离。
@@ -105,8 +104,11 @@ class cavity():
                 return nearest_atom_index
             return origin_point
 
-        while self.distance(origin_point, self.positions[nearest_atom_index]) + 0.1 >= self.vdwR_dict[nearest_atom_type][0] and \
-                self.distance(origin_point, self.positions[nearest_atom_index]) > self.distance(next_point, self.positions[nearest_atom_index]):
+        while self.distance(origin_point, self.positions[nearest_atom_index]) + 0.1 >= \
+                self.vdwR_dict[nearest_atom_type][0] and \
+                self.distance(origin_point, self.positions[nearest_atom_index]) > self.distance(next_point,
+                                                                                                self.positions[
+                                                                                                    nearest_atom_index]):
             origin_point = next_point
             next_point = [origin_point[0] + 0.1 * ray_dir[0], origin_point[1] + 0.1 * ray_dir[1],
                           origin_point[2] + 0.1 * ray_dir[2]]
@@ -118,7 +120,7 @@ class cavity():
         pore_center = np.array(sum(self.positions[i] for i in range(self.n_atoms))) / len(self.atom_masses)
         return pore_center
 
-    def calculate_volum_by_balloon(self, Path="",centerType=1, times=0):
+    def calculate_volum_by_balloon(self, Path="", centerType=1, times=0):
         pore_center_of_mass, pore_radius = self.calculate_center_and_radius()
         self.atom_type_list = []  # 存储所有原子类型
         cords_dict = {}  # 存储每种原子类型的下标
@@ -145,8 +147,7 @@ class cavity():
         pore_center = self.calculate_pore_center()
         # 初始化节点
 
-
-        balloon_vertex_neighbors = Init_Vertex(times, 1, pore_center_of_mass, pore_center, centerType, self,Path)
+        balloon_vertex_neighbors = Init_Vertex(times, 1, pore_center_of_mass, pore_center, centerType, self, Path)
         nearest_atom2vertex = []
 
         # 这里应该计算出每个顶点射出后距离最近的原子，然后开始梯度下降的问题。
@@ -184,11 +185,20 @@ class cavity():
             self.atom_masses)
         return pore_center_of_mass.tolist()
 
-    def Calculate_Cavity(self,fileName, ball_center_type, divide_times, file_input_path="", file_output_path=""):
+    def Calculate_Cavity(self, fileName, ball_center_type, divide_times, file_input_path="", file_output_path=""):
         fileName = fileName.split(',')
+        path = os.path.dirname(os.path.abspath(__file__)) + "/examples"
         for file in fileName:
             self.read_file(file_input_path, file)
-            self.calculate_volum_by_balloon(file_output_path, ball_center_type, divide_times)
+            self.calculate_volum_by_balloon(file_input_path, ball_center_type, divide_times)
+            filepath = file_input_path + "" + file.split('.')[0] + "_cavity.pdb"
+            filepath = filepath.replace("\\", "/")
+            try:
+                shutil.copy(filepath, file_output_path)
+                os.remove(filepath)
+            except:
+                print("Please check the output path")
+
     #
     def calculate_center_and_radius(self):
         # 计算孔的质心，使用 RDKit

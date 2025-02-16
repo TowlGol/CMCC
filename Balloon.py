@@ -1,7 +1,10 @@
 import math
 import time
+import os
 import warnings
 import pymeshlab as ml
+import numpy as np
+from pymol import cmd
 from Bio.PDB import *
 from Bio.PDB.PDBExceptions import PDBConstructionWarning
 
@@ -34,11 +37,10 @@ balloon_vertex_recall = []
 # 顶点分组
 balloon_vertex_group = []
 
-#是否完成扩展
+# 是否完成扩展
 extension_finished = False
-balloon_extension_vector = []
 balloon_extension_origin = []
-
+balloon_extension_vector = []
 
 file_name = ""
 balloon_influence = []
@@ -74,7 +76,7 @@ atom_vertex_count_update = True
 balloon_vertex_influence_min = {}
 # 最大数量
 INT_MAX_COUNT = 100005
-#路径
+# 路径
 Path = ""
 
 
@@ -185,10 +187,12 @@ def Init_All_DATA():
     # 路径
     Path = ""
 
+
 class XYZ:
     """
         function: Point结构体。
     """
+
     def __init__(self, x=0.0, y=0.0, z=0.0):
         if type(x) == list:
             self.x = x[0]
@@ -257,7 +261,8 @@ def update_vertex_neighbors(triangle):
 
     # 遍历三角形的每个顶点
     for v in triangle:
-        if v not in balloon_vertex_neighbors:
+        # if v not in balloon_vertex_neighbors :
+        if not balloon_vertex_neighbors.__contains__(v):
             balloon_vertex_neighbors[v] = []  # 初始化邻接表
 
     # 更新邻接关系
@@ -451,7 +456,7 @@ def extension_influence_judgement(vertex_index, new_vertex, old_vertex):
 
     min_distance = INT_MAX_COUNT
     neighbors_distance_sum = 0
-    step_len = distance_vertex_atom_center(new_vertex,old_vertex)
+    step_len = distance_vertex_atom_center(new_vertex, old_vertex)
 
     for index, condition in enumerate(balloon_influence[vertex_index]):
         # 根据每一个限制条件进行
@@ -755,6 +760,7 @@ def extension_sphere():
     if extension_finished:
         return
     # 需要更新球体节点
+    # print("balloon_center = "+str(balloon_center[0])+" "+str(balloon_center[1])+" "+str(balloon_center[2])+" ")
     balloon_vertex_count_update = True
     new_neighbors = {}
     stop_extension_count = 0
@@ -782,7 +788,7 @@ def extension_sphere():
                 or distance_vertex_atom_center(new_vertex, atom_center) < distance_vertex_atom_center(vertex,
                                                                                                       atom_center) \
                 and vdwR_dict[atom_names[index]][0] * vdwR_dict[atom_names[index]][0] < distance_vertex_atom_center(
-            new_vertex, atom_positions[index]) :
+            new_vertex, atom_positions[index]):
             # 当前节点为 无限点 and 当前节点无法再次扩展
             if balloon_vertex_extensible.keys().__contains__(i) and balloon_vertex_extensible[i] == False:
                 stop_extension_count += 1
@@ -792,6 +798,7 @@ def extension_sphere():
 
         #     如果上一次可以扩展，这次不可以扩展了，那么我们进行一次扩散
         elif balloon_vertex_extensible[i] == True:
+
             # 当前是因为碰撞不可以在扩展了
             balloon_vertex_extensible[i] = False
             # 当前点不可以被召回
@@ -832,7 +839,6 @@ def extension_sphere():
         new_neighbors[new_vertex] = []
         tmp_List = list(neighbors)
         for i, neighbor in enumerate(tmp_List):
-            # print("Vertex  = " + vertex_index.__str__()+" i = "+i.__str__())
             neighbor_index = balloon_index_neighbors[vertex_index][i]
 
             if balloon_vertex_extensible[neighbor_index]:
@@ -853,6 +859,7 @@ def extension_sphere():
     balloon_vertex_neighbors = new_neighbors
     list_neighbors = list(balloon_vertex_neighbors.keys())
     return True
+
 
 def Init_balloon_influence():
     """
@@ -878,11 +885,8 @@ def Init_balloon_influence():
         balloon_extension_vector.append([x, y, z])
 
 
-
-
-
 # 初始化球的顶点
-def Init_Vertex(time, r, mess_center, center, balloon_center_type, cage_cavity,path):
+def Init_Vertex(time, r, mess_center, center, balloon_center_type, cage_cavity, path):
     """
     function: 初始化球的顶点
     :param time: 初始三角形递归细分的次数
@@ -907,18 +911,19 @@ def Init_Vertex(time, r, mess_center, center, balloon_center_type, cage_cavity,p
     # 三角形数列
     triangles = []
     # 球心
-    if balloon_center_type == 1:
+    if balloon_center_type == '1':
         balloon_center = [center[0], center[1], center[2]]
     # 质心
-    elif balloon_center_type == 2:
-        balloon_center = [mess_center[0], mess_center[1], mess_center[2]]
+    elif balloon_center_type == '3':
+
+        balloon_center = [center[0] * 2 - mess_center[0], center[1] * 2 - mess_center[1],
+                          center[2] * 2 - mess_center[2]]
     # 对称点
     else:
-        balloon_center = [center[0] * 2 - mess_center[0], center[1] * 2 - mess_center[1],
-                                     center[2] * 2 - mess_center[2]]
+        balloon_center = [mess_center[0], mess_center[1], mess_center[2]]
 
     #  初始化数值
-    triangles.append([XYZ(r, 0, 0), XYZ(0, r, 0), XYZ(0, 0, r),int(time)])
+    triangles.append([XYZ(r, 0, 0), XYZ(0, r, 0), XYZ(0, 0, r), int(time)])
 
     if len(balloon_vertex_neighbors) != 0:
         return
@@ -985,12 +990,11 @@ def Init_Vertex(time, r, mess_center, center, balloon_center_type, cage_cavity,p
             vertex_point_3 = XYZ(t[2].x, t[2].y, -t[2].z).__add__(balloon_center)
             update_vertex_neighbors([vertex_point_1, vertex_point_2, vertex_point_3])
 
-
     for i, vertex in enumerate(list(balloon_vertex_neighbors.keys())):
         # 当前点可以被召回
         balloon_vertex_recall.append(True)
-        if(type(vertex) == list):
-            vertex = XYZ(vertex[0],vertex[1],vertex[2])
+        if (type(vertex) == list):
+            vertex = XYZ(vertex[0], vertex[1], vertex[2])
 
         balloon_vertex_copy[i] = [vertex.x - balloon_center[0], vertex.y - balloon_center[1],
                                   vertex.z - balloon_center[2]]
@@ -1000,7 +1004,8 @@ def Init_Vertex(time, r, mess_center, center, balloon_center_type, cage_cavity,p
     update_index_neighbors()
     # 初始化影响
     Init_balloon_influence()
-    return  balloon_vertex_neighbors
+    return balloon_vertex_neighbors
+
 
 def read_obj_file(file_path):
     """
@@ -1026,7 +1031,6 @@ def read_obj_file(file_path):
                 faces.append(face)
 
     return np.array(vertices), np.array(faces)
-
 
 
 def Init_atom_vertex(r, position):
@@ -1174,7 +1178,7 @@ def save_Calculation_Result():
                 tmp = [index, neighbors_list[j], neighbors_list[j + 1]]
                 tmp.sort()
                 tmp_XYZ = XYZ(tmp)
-                if tmp_XYZ not in face_set:
+                if not face_set.__contains__(tmp_XYZ):  # tmp_XYZ not in face_set
                     if get_extent_vector(list_neighbors[index], list_neighbors[neighbors_list[j]],
                                          list_neighbors[neighbors_list[j + 1]], balloon_center,
                                          list_neighbors[index].__list__(), bool):
@@ -1185,8 +1189,9 @@ def save_Calculation_Result():
 
     # 创建新的网格对象并设置顶点和面
     tmp_name = file_name[:-4]
-    pdb_out_path = Path+"/PDB/"
-    obj_out_path = Path+"/OBJ/"
+    pdb_out_path = Path
+    obj_out_path = Path + "/OBJ/"
+    obj_out_path = ""
 
     vertices = np.asarray(new_vertices, dtype=np.float32)
     faces = np.asarray(faces, dtype=np.int32)
@@ -1204,20 +1209,22 @@ def save_Calculation_Result():
     write_pdb(vertices, pdb_file_path)
 
     vertices, faces = read_obj_file(obj_out_path + name + '.obj')
-    print(f"volume (mesh Lab) = {volume_of_mesh(vertices, faces)}")
+    print(f"volume: {volume_of_mesh(vertices, faces)}")
 
+    os.remove(obj_out_path + name + '.obj')
     # 创建pml文件
-    name = name+"_Cavity"
-    pml_name = Path+tmp_name + '.pml'
-    with open(pml_name, 'w') as file:
-        file.write(f"load " + tmp_name + ".pdb\n")
-        file.write(f"load PDB/" + name +'.pdb' + "\n")
+    # name = name+"_Cavity"
+    # pml_name = Path+tmp_name + '.pml'
+    # with open(pml_name, 'w') as file:
+    #     file.write(f"load " + tmp_name + ".pdb\n")
+    #     file.write(f"load " + name +'.pdb' + "\n")
+    #
+    #     file.write(f"select " + name + "\n")
+    #     file.write(f"hide everything, " + name + "\n")
+    #     file.write(f"show surface, " + name + "\n")
+    #     file.write(f"cmd.color_deep(\"white\", '" + name + "', 0)\n")
+    #     file.write(f"util.cba(33,\"" + tmp_name + "\",_self=cmd)\n")
 
-        file.write(f"select " + name + "\n")
-        file.write(f"hide everything, " + name + "\n")
-        file.write(f"show surface, " + name + "\n")
-        file.write(f"cmd.color_deep(\"white\", '" + name + "', 0)\n")
-        file.write(f"util.cba(33,\"" + tmp_name + "\",_self=cmd)\n")
 
 def parse_obj(obj_file_path):
     """
@@ -1264,7 +1271,7 @@ def calulate_volme():
         # 获取当前距离最近的节点
         if balloon_nearest_atom2vertex[i] != INT_MAX_COUNT:
             atom_center = atom_positions[balloon_nearest_atom2vertex[i]]
-            tmp_dis = distance_vertex_atom_center(balloon_center,atom_center)
+            tmp_dis = distance_vertex_atom_center(balloon_center, atom_center)
             if math.sqrt(tmp_dis) < math.sqrt(distance):
                 distance = tmp_dis
                 min_atom_index = balloon_nearest_atom2vertex[i]
@@ -1287,7 +1294,6 @@ def signed_volume_of_triangle(v1, v2, v3):
     :return: 三角面体积
     """
     return np.dot(np.cross(v1, v2), v3) / 6.0
-
 
 
 def volume_of_mesh(vertices, faces):
@@ -1340,15 +1346,12 @@ def run_process():
             if extension_finished == False:
                 extension_times += 1
 
-    print("extension_Times = " + str(extension_times))
     save_Calculation_Result()
 
     end_time = time.time()
     execution_time = end_time - start_time
-
-    print(f"执行时间: {execution_time} 秒")
-
-
+    print("iteration times: " + str(extension_times))
+    print(f"execution time: {execution_time} 秒")
 
 
 def read_pdb_file(file_name):
@@ -1392,5 +1395,6 @@ def Start_Imitation(atom_names, vdwR_dict, positions, nearest_atom2vertex, fileN
         #     # Init_atom_vertex(vdwR_dict[atom_type][0], positions[atom_idx])
     run_process()
     Init_All_DATA()
+
 
 warnings.simplefilter('ignore', PDBConstructionWarning)
