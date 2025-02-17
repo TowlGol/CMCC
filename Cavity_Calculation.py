@@ -197,7 +197,13 @@ class cavity():
                 shutil.copy(filepath, file_output_path)
                 os.remove(filepath)
             except:
-                print("Please check the output path")
+                pos = filepath.rfind("/")  # 查找最后一个"/"的位置
+                if pos != -1:
+                    filepath = filepath[:pos+1]
+                if not file_output_path.endswith("/"):
+                    file_output_path += "/"
+                if filepath != file_output_path:
+                    print("Please check the path!")
 
     #
     def calculate_center_and_radius(self):

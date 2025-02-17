@@ -1350,7 +1350,7 @@ def run_process():
     end_time = time.time()
     execution_time = end_time - start_time
     print("iteration times: " + str(extension_times))
-    print(f"execution time: {execution_time} 秒")
+    print(f"execution time: {execution_time} Second")
 
 
 def read_pdb_file(file_name):
