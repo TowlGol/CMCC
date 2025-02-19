@@ -12,7 +12,7 @@ EXPANDING BALLOONS is a Python-based tool for calculating the cavity morphology 
 
 ## Quick installation:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mEkdtQ0SalM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![观看视频](https://img.youtube.com/vi/mEkdtQ0SalM/maxresdefault.jpg)](https://youtu.be/mEkdtQ0SalM)
 
 Installation of the tool is very simple and requires only a few steps:
 
