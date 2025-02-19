@@ -11,6 +11,9 @@
 EXPANDING BALLOONS is a Python-based tool for calculating the cavity morphology of a supramolecular cage. It can accurately support the calculation of many types of cavities. EXPANDING BALLOONS are available in two versions, the Python Project Version and the Pymol Plugin Version. In addition, a visual UI interface is provided in the Pymol Plugin to facilitate user use.
 
 ## Quick installation:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mEkdtQ0SalM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Installation of the tool is very simple and requires only a few steps:
 
 <b>
@@ -23,6 +26,7 @@ Installation of the tool is very simple and requires only a few steps:
   pip install scipy
   pip install pymeshlab
   pip install Bio
+  
   ```
 3. Put the supramolecular cage file in the "example" folder and modify the "filename" property in the Main_Process.py file.
 4. Run Main_Process.py.
