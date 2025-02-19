@@ -12,8 +12,10 @@ EXPANDING BALLOONS is a Python-based tool for calculating the cavity morphology 
 
 ## Quick installation:
 
+### Video:
 [![观看视频](https://img.youtube.com/vi/mEkdtQ0SalM/maxresdefault.jpg)](https://youtu.be/mEkdtQ0SalM)
 
+### Tutorial:
 Installation of the tool is very simple and requires only a few steps:
 
 <b>
@@ -36,7 +38,7 @@ Installation of the tool is very simple and requires only a few steps:
 All the results will be placed in the "example" folder. The PDB folder will store the PDB file of the cavity calculation result. The OBJ folder holds the cavity data information of the vertex type.
 
 
-### Install plugin in PyMOL
+#### Install plugin in PyMOL
 
 
 There are only two step need to be finished:
