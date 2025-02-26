@@ -42,17 +42,33 @@ class MyApp:
         self.execute_button = tk.Button(self.frame, text="Execute", command=self.execute_command, bg='blue', fg='white')
         self.execute_button.grid(row=4, columnspan=2, pady=10)
 
+    def add_cavity_to_last_dot(self,input_string):
+        # 找到最后一个 '.' 的位置
+        last_dot_index = input_string.rfind('.')
+
+        # 如果找到了 '.'
+        if last_dot_index != -1:
+            # 在最后一个 '.' 前面添加 '_cavity'
+            return input_string[:last_dot_index] + '_cavity' + input_string[last_dot_index:]
+        else:
+            # 如果没有找到 '.', 返回原字符串
+            return input_string
+
+
     def execute_command(self):
         file_path = self.file_path_input.get()
         file_name = self.file_name_input.get()
         divide_times = self.divide_times_input.get()
         output_path = self.output_path_input.get()
-        
-        file_path_output = os.path.dirname(os.path.abspath(__file__)) + "/Expanding_Balloon/examples"
+        file_namelist = file_name.split(",")
         file_path_output = output_path
-        
+
         command = f"balloon.Calculate_Cavity('{file_name}', '2', '{divide_times}', r'{file_path}/', r'{file_path_output}/')"
         cmd.do(command)
+        for name in file_namelist:
+            output_filename = self.add_cavity_to_last_dot(name)
+            command = f"load {file_path_output}/{output_filename},{output_filename}"
+            cmd.do(command)
 
 def run_gui():
     root = tk.Tk()
