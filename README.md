@@ -75,10 +75,15 @@ Typically, you can find plugin installation path in "C:\Users\pc\AppData\Roaming
 
 </b>
 
+## Data Collection and Processing
+ [![观看视频](https://img.youtube.com/vi/lDFa2aPsj_M/maxresdefault.jpg)](https://youtu.be/lDFa2aPsj_M)
+
+
 ## License
 
 <b> This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. </b>
 <hr>
+
 
 
 <!-- # Supporting Information
