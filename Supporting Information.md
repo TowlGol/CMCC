@@ -2,14 +2,16 @@
 
 The document serves as supporting material for "EXPANDING BALLOON : Robust Computational Method for Morphology of Supramolecular Cage Cavities Based on the “Inflating Balloons” Metaphor". It provides further explanations of four parts of the paper: comparison of working parameters [(S1)](#s1-compare-working-parameter), center selection experiment [(S2)](#s2--center-selection-experiment-reult), CMCC vertex result conversion [(S3)](#s3--parameters-selection-and-experimental-results),  experimental parameters and results of the baseline dataset [(S4)](#s4--CMCC-result-convert), and detail of step length selection experiment[(S5)](#s5--step-length-selection-experiment). For detailed information on how to install and use CMCC, please refer to the GitHub repository for comprehensive documentation and source code.
 
-## S1: Compare working parameter
+## S1: Benchmark dataset selection and compare working parameter
+We used the dataset provided by Guerra et al. <sup>[[1](#references)]</sup> as our test data. First, the original CIF files were downloaded from the CSD, and the supramolecular cages were extracted using Diamond by removing atoms and molecular fragments that did not belong to the framework. Next, the data was imported into PyMOL <sup>[[2](#references)]</sup> for visualization and saved as a PDB file. A detailed tutorial video of the operation process is provided [here](https://www.youtube.com/watch?v=lDFa2aPsj_M).
+We set the current parameters based on recent studies <sup>[[1](#references)[,3](#references)]</sup>. Since Pywindow has no customizable parameters in its design, no parameter adjustment is required.
+
 <div align="center">
 
 ### Table S1 : KVFinder project detecte properties. 
 
 | Supramolecular Cage Identifier | Step (Å) | Probe Out (Å) | Removal Distance (Å) | Volume Cutoff (Å³) |
 |:------------------------------:|:-------:|:------------:|:--------------------:|:------------------:|
-|              A1                |  0.25   |      10      |         0.75         |         80         |
 |              B1                |  0.25   |      10      |         2.00         |          5         |
 |              B2                |  0.25   |      10      |         1.75         |          5         |
 |              B3                |  0.25   |      10      |         1.50         |         20         |
@@ -23,6 +25,7 @@ The document serves as supporting material for "EXPANDING BALLOON : Robust Compu
 |              B11               |  0.25   |      10      |         1.50         |          5         |
 |              B12               |  0.25   |       6      |         1.50         |          5         |
 |              B13               |  0.25   |       6      |         1.50         |          5         |
+|              A1                |  0.25   |      10      |         0.75         |         80         |
 |              C1                |  0.25   |      10      |         1.00         |          5         |
 |              F1                |  0.25   |      10      |         1.25         |          5         |
 |              F2                |  0.60   |      20      |         3.50         |          5         |
@@ -34,35 +37,10 @@ The document serves as supporting material for "EXPANDING BALLOON : Robust Compu
 
 
 
-### Table S2 : Fpocket detection parameters for each supramolecular cage. 
-| Supramolecular Cage Identifier | Minimum Radius of an Alpha Sphere (Å) | Maximum Radius of an Alpha Sphere (Å) |
-|:------------------------------:|:------------------------------------:|:------------------------------------:|
-|              A1                |                 3.4                  |                 8.0                  |
-|              B1                |                 3.4                  |                 8.0                  |
-|              B2                |                 3.4                  |                 8.0                  |
-|              B3                |                 3.4                  |                 8.0                  |
-|              B4                |                 3.4                  |                 8.0                  |
-|              B5                |                 3.0                  |                 6.2                  |
-|              B6                |                 3.4                  |                 8.0                  |
-|              B7                |                 3.4                  |                 8.0                  |
-|              B8                |                 3.4                  |                 8.0                  |
-|              B9                |                 3.4                  |                 8.0                  |
-|             B10                |                 3.4                  |                 8.0                  |
-|             B11                |                 3.4                  |                 8.0                  |
-|             B12                |                 3.4                  |                 8.0                  |
-|             B13                |                 3.4                  |                 8.0                  |
-|              C1                |                 3.4                  |                 8.0                  |
-|              F1                |                 2.0                  |                 6.2                  |
-|              F2                |                 3.4                  |                40.0                  |
-|              H1                |                 3.4                  |                 6.2                  |
-|              N1                |                 3.7                  |                 8.0                  |
-|              O1                |                 3.4                  |                 6.2                  |
-|              O2                |                 3.4                  |                 6.2                  |
-|              W1                |                 4.0                  |                 7.0                  |
 
 
 
-### Table S3 : Cavity volumes calculated with C3 using a grid spacing of 0.5 Å and a distance threshold for the 90-degree calculation of 2 times the window size. For the Dataset 2, all run properties are default.
+### Table S2 : Cavity volumes calculated with C3 using a grid spacing of 0.5 Å and a distance threshold for the 90-degree calculation of 2 times the window size. For the Dataset 2, all run properties are default.
 | Supramolecular Cage Identifier | C3 Calculated Volume (Å³) | Guest vdW Volume (Å³) | Estimated Cavity Volume Using Rebek’s Rule (Å³) | Relative Error (%) |
 |:------------------------------:|:-------------------------:|:---------------------:|:--------------------------------------------:|:------------------:|
 |              B1                |            298            |          150          |                     273                      |        9.2         |
@@ -80,6 +58,61 @@ The document serves as supporting material for "EXPANDING BALLOON : Robust Compu
 |             B13                |            828            |          618          |                    1123                      |       -26.2        |
 |                                |                           |                       |               **MRAE (%)**                   |        22.6        |
 
+
+### Table S3 : Fpocket detection parameters for each supramolecular cage. 
+| Supramolecular Cage Identifier | Minimum Radius of an Alpha Sphere (Å) | Maximum Radius of an Alpha Sphere (Å) |
+|:------------------------------:|:------------------------------------:|:------------------------------------:|
+|              B1                |                 3.4                  |                 8.0                  |
+|              B2                |                 3.4                  |                 8.0                  |
+|              B3                |                 3.4                  |                 8.0                  |
+|              B4                |                 3.4                  |                 8.0                  |
+|              B5                |                 3.0                  |                 6.2                  |
+|              B6                |                 3.4                  |                 8.0                  |
+|              B7                |                 3.4                  |                 8.0                  |
+|              B8                |                 3.4                  |                 8.0                  |
+|              B9                |                 3.4                  |                 8.0                  |
+|             B10                |                 3.4                  |                 8.0                  |
+|             B11                |                 3.4                  |                 8.0                  |
+|             B12                |                 3.4                  |                 8.0                  |
+|             B13                |                 3.4                  |                 8.0                  |
+|              A1                |                 3.4                  |                 8.0                  |
+|              C1                |                 3.4                  |                 8.0                  |
+|              F1                |                 2.0                  |                 6.2                  |
+|              F2                |                 3.4                  |                40.0                  |
+|              H1                |                 3.4                  |                 6.2                  |
+|              N1                |                 3.7                  |                 8.0                  |
+|              O1                |                 3.4                  |                 6.2                  |
+|              O2                |                 3.4                  |                 6.2                  |
+|              W1                |                 4.0                  |                 7.0                  |
+
+### Table S4: MoloVol detection parameters for each supramolecular cage.
+| Supramolecular Cage Identifier | Grid Spacin (Å³) | Small Probe Radiu (Å³) | Large Probe Radiu (Å³) |
+|:------------------------------:|:----------------:|:----------------------:|:----------------------:|
+|              B1                |       0.6        |          1.4           |           6            |
+|              B2                |       0.6        |          1.4           |           5            |
+|              B3                |       0.6        |          1.4           |           5            |
+|              B4                |       0.6        |          1.4           |           5            |
+|              B5                |        0.6        |           1.4           |           5            |
+|              B6                |        0.6        |           1.4           |           5            |
+|              B7                |       0.6        |          1.4           |           5            |
+|              B8                |       0.6        |          1.4           |           5            |
+|              B9                |        0.6        |          1.4           |           5            |
+|             B10                |       0.6        |          1.4           |           5            |
+|             B11                |       0.6        |          1.4           |           5            |
+|             B12                |       0.6        |          1.4           |           5            |
+|             B13                |       0.6        |          1.4           |           5            |
+|              A1                |       0.6        |          1.4           |           5            |
+|              C1                |       0.6        |          1.4           |           5            |
+|              F1                |       0.6        |          1.4           |           5            |
+|              F2                |       0.6        |          1.4           |           20           |
+|              H1                |       0.6        |          1.4           |           5            |
+|              N1                |       0.6        |          1.4           |           5            |
+|              O1                |       0.6        |          1.4           |           5            |
+|              O2                |       0.6        |          1.4           |           15           |
+|              W1                |       0.6        |          1.4           |           5            |
+
+
+
 </div>
 
 
@@ -89,7 +122,7 @@ The following tables demonstrate the impact of the choice of sphere center on th
 
 <div align="center">
 
-### Table S4 : Sphere center influence
+### Table S5 : Sphere center influence
 
 | Supramolecular Cage | Estimated\Reference Cavity Volume (Å³) | Centroid(Å³) | Center of Mass(Å³)  | Symmetrical Point(Å³) | Subdivision Times |
 |:------------------------------:|:-------------------:|:------:|:--------:|:-----------------:|:-----:|
@@ -144,7 +177,7 @@ The following tables demonstrate the impact of the choice of sphere center on th
 
 <div align="center">
 
-### Table S5 : Parameters and calculation result of dataset 1  
+### Table S6 : Parameters and calculation result of dataset 1  
 
 <div align="center">
 
@@ -167,7 +200,7 @@ The following tables demonstrate the impact of the choice of sphere center on th
 </div>
 
 
-### Table S6 : Parameters and calculation result of dataset 2
+### Table S7 : Parameters and calculation result of dataset 2
 
 | **Cage** | **Reference/Average Volume (Å³)** | **CMCC Result (Å³)** | **Subdivision Times** |                      **Result**                      |
 |:--------:|:----------------------------------:|:--------------:|:-----------------:|:----------------------------------------------------:|
@@ -222,7 +255,7 @@ In order to select the optimal step length, we conducted experiments using vario
 
 <div align="center">
 
-### Table S7 : Parameters and Calculation Result of Dataset 2
+### Table S8 : Parameters and Calculation Result of Dataset 2
 | **Step Length(Å)** | **0.01** | **0.05** | **0.1** | **0.15** | **0.2** |
 |:-----------------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 | **MRAE(%)**      | 12.8     | 12.9     | 12.9     | 13.2     | 13.7     |
@@ -232,3 +265,10 @@ In order to select the optimal step length, we conducted experiments using vario
 </div>
 
 
+## References
+
+1. Guerra, J. V.; Alves, L. F.; Bourissou, D.; Lopes-de Oliveira, P. S.; Szaloki, G. C. Cavity Characterization in Supramolecular Cages. *Journal of Chemical Information and Modeling* **2023**, 63, 3772–3785.
+
+2. DeLano, W. L.; others PyMOL: An Open-Source Molecular Graphics Tool. *CCP4 Newsl. Protein Crystallogr* **2002**, 40, 82–92.
+
+3. Martí-Centelles, V.; Piskorz, T. K.; Duarte, F. CageCavityCalc (C3): A Computational Tool for Calculating and Visualizing Cavities in Molecular Cages. **2024**
