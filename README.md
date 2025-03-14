@@ -1,4 +1,8 @@
-<h1 align="center"><strong><em>EXPANDING BALLOONS</em></strong></h1>
+[//]: # (<h1 align="center"><strong><em>EXPANDING BALLOONS</em></strong></h1>)
+
+<div align="center">
+  <img src="./image/head.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
+</div>
 
 <div align="center">
   <img src="./image/main.png" alt="计算时间与网格划分之间的关系" style="width:100%;">
