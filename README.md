@@ -85,7 +85,13 @@ Typically, you can find plugin installation path in "C:\Users\pc\AppData\Roaming
 
 ## License
 
-<b> This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. </b>
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
+
+You are **free to use, modify, and distribute** this software **for non-commercial purposes only**.  
+For any **commercial use**, please contact the author for permission.
+
+📜 [View License](https://creativecommons.org/licenses/by-nc/4.0/)
+
 <hr>
 
 
