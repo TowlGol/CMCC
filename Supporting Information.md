@@ -4,8 +4,8 @@ The document serves as supporting material for "EXPANDING BALLOON : Robust Compu
 
 ## S1: Benchmark dataset selection and compare working parameter
 We used the dataset provided by Guerra et al. <sup>[[1](#references)]</sup> as our test data. First, the original CIF files were downloaded from the CSD, and the supramolecular cages were extracted using Diamond by removing atoms and molecular fragments that did not belong to the framework. Next, the data was imported into PyMOL <sup>[[2](#references)]</sup> for visualization and saved as a PDB file. A detailed tutorial video of the operation process is provided [here](https://www.youtube.com/watch?v=lDFa2aPsj_M).
-We set the current parameters based on recent studies <sup>[[1](#references)[,3](#references)]</sup>. Since Pywindow has no customizable parameters in its design, no parameter adjustment is required.
-
+We set the current parameters based on recent studies <sup>[[1](#references)[,3](#references)]</sup>. Since Molipor and Pywindow have no customizable parameters in their design, no parameter adjustment is required.
+However, since no method for calculating the cavity volume is provided in Molipor, we adopt a grid-based method to calculate the resulting cavity volume.The source code of the calculation process and the results are both saved in the molipor-result folder on [Github](https://www.youtube.com/watch?v=lDFa2aPsj_M).
 <div align="center">
 
 ### Table S1 : KVFinder project detecte properties. 
