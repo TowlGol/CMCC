@@ -1,0 +1,9 @@
+# vtk DataFile Version 2.0
+vtk data for file Molecules_Output/Molecule/WindowE_01
+ASCII
+DATASET POLYDATA
+POINTS 2 double
+11.774 16.120 -2.308
+10.774 14.764 -1.597
+LINES 1 3
+2 0 1

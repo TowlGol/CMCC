@@ -1,0 +1,11 @@
+# vtk DataFile Version 2.0
+vtk data for file Molecules_Output/Molecule/Voronoi_interior
+ASCII
+DATASET POLYDATA
+POINTS 3 double
+3.155 6.042 12.099
+1.958 6.116 12.030
+2.753 6.011 12.187
+LINES 2 6
+2 0 2
+2 1 2

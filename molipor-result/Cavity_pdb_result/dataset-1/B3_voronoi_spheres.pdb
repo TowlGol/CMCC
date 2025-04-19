@@ -1,0 +1,6 @@
+HETATM    1  VSP VOR A   1      18.033  -2.655  64.803  1.00  1.28           V
+HETATM    2  VSP VOR A   2      24.089  -0.842  64.802  1.00  1.28           V
+HETATM    3  VSP VOR A   3      19.490   3.498  64.803  1.00  1.28           V
+HETATM    4  VSP VOR A   4      20.538  -0.000  61.589  1.00  2.48           V
+HETATM    5  VSP VOR A   5      20.538   0.000  63.076  1.00  3.22           V
+END
