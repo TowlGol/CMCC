@@ -38,7 +38,7 @@ project_root/
 ├── dataset-1 & dataset-2/ # PDB and Mol type dataset  
 ├── Mol2_to_Mol-v3000.py # MOL2 to V3000 converter  
 ├── convert_vtk2pdb.py # VTK to PDB converter  
-├── Dataset-1/2_volume_result # Statistical result
+├── Dataset-1/2_volume_result # Statistical result  
 └── README.md # This file  
 
 
